@@ -4,13 +4,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { createTheme } from '@mui/material/styles'
-import { purple } from '@mui/material/colors';
 import { ThemeProvider } from '@emotion/react';
 import bmxlogo from '../images/bmxlogo.jpg'
 
 const theme = createTheme({
     palette: {
-        primary: purple
+        primary: {
+            main: '#81007f'
+        }
     }
 })
 
