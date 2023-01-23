@@ -1,21 +1,15 @@
-import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 const AddPark = () => {
   return (
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
+      <form noValidate autoComplete='off'>
         <TextField id="outlined-basic" label="park name" variant="outlined" />
+        <br />
         <TextField id="outlined-basic" label="park address" variant="outlined" />
-      </div>
-    </Box>
+        <br />
+        <Button color="primary">Add Park</Button>
+      </form>
   );
 }
 
