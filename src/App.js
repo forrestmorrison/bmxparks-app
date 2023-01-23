@@ -14,13 +14,13 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
-      <NavBar />
-      <main>
-        <h1>BMX Parks</h1>
-        <AddPark />
-      </main>
-    </div>
+      <div className="app">
+        <NavBar />
+        <main>
+          <h1>BMX Parks</h1>
+          <AddPark />
+        </main>
+      </div>
     </ThemeProvider>
   );
 }
