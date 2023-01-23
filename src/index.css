@@ -33,3 +33,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
 }
+
+.park-type {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}

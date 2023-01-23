@@ -22,7 +22,12 @@ const NavBar = () => {
                     alt="bmxlogo"
                     src={logo}
                 />
-                <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} color='primary'>
+                <Typography 
+                    variant="h5" 
+                    component="div" 
+                    sx={{ flexGrow: 1 }} 
+                    color='primary'
+                >
                     BMX Parks
                 </Typography>
                 <Button color="primary">Add Park</Button>

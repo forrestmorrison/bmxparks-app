@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup'
+import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
@@ -60,7 +61,14 @@ const AddPark = () => {
           variant="outlined"
           error={addressError}
         />
-        <div>
+        <div className='park-type'>
+          <Typography
+            sx={{
+              marginRight: 2
+            }}
+          >
+            park type:
+          </Typography>
           <FormControlLabel control={<Checkbox />} label="Dirt" />
           <FormControlLabel control={<Checkbox />} label="Race" />
           <FormControlLabel control={<Checkbox />} label="Street" />
