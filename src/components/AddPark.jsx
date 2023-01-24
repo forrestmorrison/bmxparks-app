@@ -61,10 +61,15 @@ const AddPark = () => {
           variant="outlined"
           error={addressError}
         />
-        <div className='park-type'>
+        <FormGroup
+          sx={{
+            display: 'flex',
+            flexDirection: 'row'
+          }}
+        >
           <Typography
             sx={{
-              marginRight: 2
+              margin: 2
             }}
           >
             park type:
@@ -72,7 +77,7 @@ const AddPark = () => {
           <FormControlLabel control={<Checkbox />} label="Dirt" />
           <FormControlLabel control={<Checkbox />} label="Race" />
           <FormControlLabel control={<Checkbox />} label="Street" />
-        </div>
+        </FormGroup>
         <Button
           type="submit"
           color="primary"
