@@ -36,7 +36,11 @@ const AddPark = () => {
   return (
     <Box
       sx={{
-        width: 500,
+        width: {
+          xs: 350,
+          sm: 500,
+
+        },
         flexGrow: 1 
       }}
     >
