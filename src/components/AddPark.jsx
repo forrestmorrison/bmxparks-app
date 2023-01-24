@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup'
@@ -33,7 +34,12 @@ const AddPark = () => {
   }
 
   return (
-    <div className='form-container'>
+    <Box
+      sx={{
+        width: 500,
+        flexGrow: 1 
+      }}
+    >
       <form noValidate autoComplete="off" className='form' onSubmit={handleSubmit}>
         <TextField
           onChange={(e) => setName(e.target.value)}
@@ -88,7 +94,7 @@ const AddPark = () => {
           Add Park
         </Button>
       </form>
-    </div>
+    </Box>
   );
 }
 
