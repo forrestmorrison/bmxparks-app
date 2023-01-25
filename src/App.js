@@ -1,8 +1,7 @@
 import NavBar from "./components/NavBar";
-import ParkData from "./data/ParkData";
+import ParkItem from "./components/ParkItem";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
-import { useState } from "react";
 
 const theme = createTheme({
   palette: {
@@ -22,6 +21,7 @@ function App() {
         <NavBar />
         <main>
           <h1>BMX Parks</h1>
+          <ParkItem />
         </main>
       </div>
     </ThemeProvider>
