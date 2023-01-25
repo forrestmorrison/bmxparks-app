@@ -1,4 +1,5 @@
 import Card from '@mui/material/Card'
+import PropTypes from 'prop-types'
 
 const ParkItem = ({item}) => {
 
@@ -8,6 +9,10 @@ const ParkItem = ({item}) => {
             <div className='park-address-display'>{item.address}</div>
         </Card>
     )
+}
+
+ParkItem.propTypes = {
+    item: PropTypes.object.isRequired
 }
 
 export default ParkItem
