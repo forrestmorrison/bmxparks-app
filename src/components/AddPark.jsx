@@ -1,12 +1,13 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel'
-import FormGroup from '@mui/material/FormGroup'
+import FormGroup from '@mui/material/FormGroup';
+import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography'
 import { useState } from 'react';
 
 const AddPark = () => {
@@ -15,8 +16,21 @@ const AddPark = () => {
   const [address, setAddress] = useState('')
   const [nameError, setNameError] = useState(false)
   const [addressError, setAddressError] = useState(false)
-  const [type, setType] = useState('')
+  const [type, setType] = useState({
+    dirt: false,
+    race: false,
+    street: false,
+  })
   const [radio, setRadio] = useState('')
+
+  const handleChange = (event) => {
+    setType({
+      ...type,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const { dirt, race, street } = type;
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -75,36 +89,44 @@ const AddPark = () => {
           variant="outlined"
           error={addressError}
         />
-        <FormGroup
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          sx={{
-            display: 'flex',
-            flexDirection: 'row'
-          }}
-        >
-          <Typography
+        <Box>
+          <FormControl sx={{ m: 3, display: 'flex', flexDirection: 'row' }} component="fieldset" variant="standard">
+            <FormLabel sx={{ m: 3 }}>type</FormLabel>
+            <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
+              <FormControlLabel
+                control={
+                  <Checkbox checked={dirt} onChange={handleChange} name="dirt" />
+                }
+                label="dirt"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox checked={race} onChange={handleChange} name="race" />
+                }
+                label="race"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox checked={street} onChange={handleChange} name="street" />
+                }
+                label="street"
+              />
+            </FormGroup>
+          </FormControl>
+        </Box>
+        <Box>
+          <RadioGroup
+            value={radio}
+            onChange={(e) => setRadio(e.target.value)}
             sx={{
-              margin: 2
+              display: 'flex',
+              flexDirection: 'row'
             }}
           >
-            park type:
-          </Typography>
-          <FormControlLabel value="dirt" control={<Checkbox />} label="dirt" />
-          <FormControlLabel value="race" control={<Checkbox />} label="race" />
-          <FormControlLabel value="street" control={<Checkbox />} label="street" />
-        </FormGroup>
-        <RadioGroup
-          value={radio}
-          onChange={(e) => setRadio(e.target.value)}
-          sx={{
-            display: 'flex',
-            flexDirection: 'row'
-          }}
-        >
-          <FormControlLabel value="free" control={<Radio />} label="free" />
-          <FormControlLabel value="paid" control={<Radio />} label="paid" />
-        </RadioGroup>
+            <FormControlLabel value="free" control={<Radio />} label="free" />
+            <FormControlLabel value="paid" control={<Radio />} label="paid" />
+          </RadioGroup>
+        </Box>
         <Button
           type="submit"
           color="primary"
