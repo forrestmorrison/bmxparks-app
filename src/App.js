@@ -1,7 +1,8 @@
-import AddPark from "./components/AddPark";
 import NavBar from "./components/NavBar";
+import ParkData from "./data/ParkData";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
+import { useState } from "react";
 
 const theme = createTheme({
   palette: {
@@ -12,6 +13,9 @@ const theme = createTheme({
 })
 
 function App() {
+
+  // const [park, setPark] = useState(ParkData)
+
   return (
     <ThemeProvider theme={theme}>
       <div className="app">

@@ -8,7 +8,7 @@ import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import TextField from '@mui/material/TextField';
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const AddPark = () => {
 
@@ -21,7 +21,7 @@ const AddPark = () => {
     race: false,
     street: false,
   })
-  const [radio, setRadio] = useState('')
+  const [access, setAccess] = useState('')
 
   const [modal, setModal] = useState(false)
 
@@ -59,7 +59,14 @@ const AddPark = () => {
     }
 
     if (name && address) {
-      console.log(name, address, type, radio)
+      const newPark = {
+        name,
+        address,
+        type,
+        access
+      }
+
+      console.log(newPark)
     }
   }
 
@@ -136,8 +143,8 @@ const AddPark = () => {
                 </Box>
                 <Box>
                   <RadioGroup
-                    value={radio}
-                    onChange={(e) => setRadio(e.target.value)}
+                    value={access}
+                    onChange={(e) => setAccess(e.target.value)}
                     sx={{
                       display: 'flex',
                       flexDirection: 'row'
