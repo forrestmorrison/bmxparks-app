@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
@@ -8,7 +9,6 @@ import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import TextField from '@mui/material/TextField';
-import { useState } from 'react';
 
 const AddPark = () => {
 
@@ -35,10 +35,18 @@ const AddPark = () => {
     document.body.classList.remove('active-modal')
   }
 
-  const handleChange = (event) => {
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handleAddressChange = (e) => {
+    setAddress(e.target.value)
+  }
+
+  const handleTypeChange = (e) => {
     setType({
       ...type,
-      [event.target.name]: event.target.checked,
+      [e.target.name]: e.target.checked,
     });
   };
 
@@ -61,9 +69,7 @@ const AddPark = () => {
     if (name && address) {
       const newPark = {
         name,
-        address,
-        type,
-        access
+        address
       }
 
       console.log(newPark)
@@ -91,7 +97,8 @@ const AddPark = () => {
               <form noValidate autoComplete="off" className='form' onSubmit={handleSubmit}>
                 <h1>add park</h1>
                 <TextField
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={handleNameChange}
+                  value={name}
                   fullWidth
                   id="outlined-basic" 
                   label="park name"
@@ -104,7 +111,8 @@ const AddPark = () => {
                   error={nameError}
                 />
                 <TextField
-                  onChange={(e) => setAddress(e.target.value)}
+                  onChange={handleAddressChange}
+                  value={address}
                   fullWidth
                   id="outlined-basic" 
                   label="park address"
@@ -122,19 +130,19 @@ const AddPark = () => {
                     <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
                       <FormControlLabel
                         control={
-                          <Checkbox checked={dirt} onChange={handleChange} name="dirt" />
+                          <Checkbox checked={dirt} onChange={handleTypeChange} name="dirt" />
                         }
                         label="dirt"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox checked={race} onChange={handleChange} name="race" />
+                          <Checkbox checked={race} onChange={handleTypeChange} name="race" />
                         }
                         label="race"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox checked={street} onChange={handleChange} name="street" />
+                          <Checkbox checked={street} onChange={handleTypeChange} name="street" />
                         }
                         label="street"
                       />

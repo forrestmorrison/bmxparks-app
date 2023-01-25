@@ -9,36 +9,37 @@ import bmxlogo from '../images/bmxlogo.jpg'
 const logo = bmxlogo
 
 const NavBar = () => {
-  return (
-    <Box 
-        sx={{ flexGrow: 1 }}
-    >
-        <AppBar position="static" color=''>
-            <Toolbar>
-                <Box 
-                    component="img"
-                    sx={{
-                        height: 20,
-                        width: 20,
-                        marginRight: 1
-                    }}
-                    alt="bmxlogo"
-                    src={logo}
-                />
-                <Typography 
-                    variant="h5" 
-                    component="div" 
-                    sx={{ flexGrow: 1 }} 
-                    color='primary'
-                >
-                    BMX Parks
-                </Typography>
-                <AddPark />
-                <Button color="primary">Log Out</Button>
-            </Toolbar>
-        </AppBar>
-    </Box>
-  );
+    
+    return (
+        <Box 
+            sx={{ flexGrow: 1 }}
+        >
+            <AppBar position="static" color=''>
+                <Toolbar>
+                    <Box 
+                        component="img"
+                        sx={{
+                            height: 20,
+                            width: 20,
+                            marginRight: 1
+                        }}
+                        alt="bmxlogo"
+                        src={logo}
+                    />
+                    <Typography 
+                        variant="h5" 
+                        component="div" 
+                        sx={{ flexGrow: 1 }} 
+                        color='primary'
+                    >
+                        BMX Parks
+                    </Typography>
+                    <AddPark />
+                    <Button color="primary">Log Out</Button>
+                </Toolbar>
+            </AppBar>
+        </Box>
+    );
 }
 
 export default NavBar
