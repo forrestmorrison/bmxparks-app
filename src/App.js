@@ -18,7 +18,6 @@ function App() {
         <NavBar />
         <main>
           <h1>BMX Parks</h1>
-          <AddPark />
         </main>
       </div>
     </ThemeProvider>
