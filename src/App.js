@@ -1,5 +1,7 @@
+import { useState } from "react";
 import NavBar from "./components/NavBar";
-import ParkItem from "./components/ParkItem";
+import ParkList from "./components/ParkList";
+import ParkData from "./data/ParkData";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
 
@@ -13,7 +15,7 @@ const theme = createTheme({
 
 function App() {
 
-  // const [park, setPark] = useState(ParkData)
+  const [parks, setParks] = useState(ParkData)
 
   return (
     <ThemeProvider theme={theme}>
@@ -21,7 +23,7 @@ function App() {
         <NavBar />
         <main>
           <h1>BMX Parks</h1>
-          <ParkItem />
+          <ParkList parks={parks}/>
         </main>
       </div>
     </ThemeProvider>
