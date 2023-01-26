@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const ParkContext = createContext()
 
 export const ParkProvider = ({children}) => {
-    const [park, setPark] = useState([
+    const [parks, setParks] = useState([
         {
             id: 1,
             name: "Rockstar Energy Bike Park",
@@ -18,7 +18,7 @@ export const ParkProvider = ({children}) => {
     ])
 
     return <ParkContext.Provider value={{
-        park,
+        parks,
     }}>
         {children}
     </ParkContext.Provider>

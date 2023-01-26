@@ -25,7 +25,7 @@ function App() {
           <NavBar />
           <main>
             <h1>BMX Parks</h1>
-            <ParkList parks={parks}/>
+            <ParkList />
           </main>
         </div>
       </ThemeProvider>

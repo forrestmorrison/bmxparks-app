@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import ParkItem from "./ParkItem"
+import ParkContext from "../context/ParkContext"
 
-const ParkList = ({parks}) => {
+const ParkList = () => {
+    const {parks} = useContext(ParkContext)
+
     if(!parks || parks.length === 0) {
         return <p>no parks yet</p>
     }
