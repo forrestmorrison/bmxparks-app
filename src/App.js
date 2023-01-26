@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ParkProvider } from "./context/ParkContext";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
 import ParkData from "./data/ParkData";
@@ -18,15 +19,17 @@ function App() {
   const [parks, setParks] = useState(ParkData)
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="app">
-        <NavBar />
-        <main>
-          <h1>BMX Parks</h1>
-          <ParkList parks={parks}/>
-        </main>
-      </div>
-    </ThemeProvider>
+    <ParkProvider>
+      <ThemeProvider theme={theme}>
+        <div className="app">
+          <NavBar />
+          <main>
+            <h1>BMX Parks</h1>
+            <ParkList parks={parks}/>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ParkProvider>
   );
 }
 
