@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { ParkProvider } from "./context/ParkContext";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
-import ParkData from "./data/ParkData";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
 
@@ -15,8 +13,6 @@ const theme = createTheme({
 })
 
 function App() {
-
-  const [parks, setParks] = useState(ParkData)
 
   return (
     <ParkProvider>

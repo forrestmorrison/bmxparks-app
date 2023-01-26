@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid"
+import { createContext, useState } from "react"
 
 const ParkContext = createContext()
 
@@ -14,11 +15,28 @@ export const ParkProvider = ({children}) => {
                 street: true
             },
             access: "free"
+        },
+        {
+            id: 2,
+            name: "9th Street BMX Park",
+            address: "900 9th St, Austin, TX 77067",
+            type: {
+                dirt: true,
+                race: true,
+                street: true
+            },
+            access: "free"
         }
     ])
 
+    const addPark = (newPark) => {
+        newPark.id = uuidv4()
+        setParks(newPark, ...parks)
+    }
+
     return <ParkContext.Provider value={{
         parks,
+        addPark
     }}>
         {children}
     </ParkContext.Provider>

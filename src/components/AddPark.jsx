@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import ParkContext from '../context/ParkContext';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
@@ -22,6 +23,8 @@ const AddPark = () => {
     street: false,
   })
   const [access, setAccess] = useState('')
+
+  const {addPark} = useContext(ParkContext)
 
   const [modal, setModal] = useState(false)
 
@@ -66,13 +69,13 @@ const AddPark = () => {
       setAddressError(true)
     }
 
-    if (name && address) {
+    if (name.trim().length > 1 && address.trim().length > 1) {
       const newPark = {
         name,
         address
       }
 
-      console.log(newPark)
+      addPark(newPark)
     }
   }
 
