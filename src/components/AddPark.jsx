@@ -72,7 +72,9 @@ const AddPark = () => {
     if (name.trim().length > 1 && address.trim().length > 1) {
       const newPark = {
         name,
-        address
+        address,
+        type,
+        access
       }
 
       addPark(newPark)

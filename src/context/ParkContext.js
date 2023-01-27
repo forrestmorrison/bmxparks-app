@@ -22,8 +22,8 @@ export const ParkProvider = ({children}) => {
             address: "900 9th St, Austin, TX 77067",
             type: {
                 dirt: true,
-                race: true,
-                street: true
+                race: false,
+                street: false
             },
             access: "free"
         }
@@ -31,7 +31,7 @@ export const ParkProvider = ({children}) => {
 
     const addPark = (newPark) => {
         newPark.id = uuidv4()
-        setParks(newPark, ...parks)
+        setParks([newPark, ...parks])
     }
 
     return <ParkContext.Provider value={{
