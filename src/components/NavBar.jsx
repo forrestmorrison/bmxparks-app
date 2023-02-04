@@ -17,7 +17,12 @@ const NavBar = () => {
             sx={{ flexGrow: 1 }}
         >
             <AppBar position="static" color=''>
-                <Toolbar>
+                <Toolbar
+                    sx={{
+                        display: "flex",
+                        justifyContent: "space-between"
+                    }}
+                >
                     <Link to="/" 
                         style={{
                             textDecoration:"none",
@@ -44,15 +49,16 @@ const NavBar = () => {
                             BMX Parks
                         </Typography>
                     </Link>
-                    <AddPark />
-                    <Link to="/signup" 
-                        style={{
-                            textDecoration:"none"
-                        }}
-                    >
-                        <Button color="primary">Log Out</Button>
-                    </Link>
-                    
+                    <Box>
+                        <AddPark />
+                        <Link to="/signup" 
+                            style={{
+                                textDecoration:"none"
+                            }}
+                        >
+                            <Button color="primary">Log Out</Button>
+                        </Link>
+                    </Box>
                 </Toolbar>
             </AppBar>
         </Box>
