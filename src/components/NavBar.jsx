@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import bmxlogo from '../images/bmxlogo.jpg'
+import { Link } from 'react-router-dom';
 
 const logo = bmxlogo
 
@@ -35,7 +36,8 @@ const NavBar = () => {
                         BMX Parks
                     </Typography>
                     <AddPark />
-                    <Button color="primary">Log Out</Button>
+                    <Link to="/signup"><Button color="primary">Log Out</Button></Link>
+                    
                 </Toolbar>
             </AppBar>
         </Box>

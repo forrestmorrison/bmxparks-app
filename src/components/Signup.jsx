@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import UserContext from '../context/UserContext';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-const Login = () => {
+const Signup = () => {
 
   const [email, setEmail] = useState("")
   const [username, setUsername] = useState("")
@@ -111,4 +110,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup

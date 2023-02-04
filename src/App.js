@@ -1,5 +1,6 @@
+import { Routes, Route } from "react-router-dom"
 import { ParkProvider } from "./context/ParkContext";
-import Login from "./components/Login";
+import Signup from "./components/Signup";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
 import { createTheme } from '@mui/material/styles'
@@ -21,8 +22,10 @@ function App() {
         <div className="app">
           <NavBar />
           <main>
-            <ParkList />
-            <Login />
+            <Routes>
+              <Route path="/" element={<ParkList />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
           </main>
         </div>
       </ThemeProvider>
