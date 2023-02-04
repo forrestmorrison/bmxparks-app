@@ -1,4 +1,5 @@
 import { ParkProvider } from "./context/ParkContext";
+import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
 import { createTheme } from '@mui/material/styles'
@@ -21,6 +22,7 @@ function App() {
           <NavBar />
           <main>
             <ParkList />
+            <Login />
           </main>
         </div>
       </ThemeProvider>
