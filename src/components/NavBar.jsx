@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import bmxlogo from '../images/bmxlogo.jpg'
 import { Link } from 'react-router-dom';
-import { display } from '@mui/system';
 
 const logo = bmxlogo
 

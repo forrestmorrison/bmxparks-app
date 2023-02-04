@@ -6,24 +6,19 @@ import TextField from '@mui/material/TextField';
 const Signup = () => {
 
   const [email, setEmail] = useState("")
-  const [username, setUsername] = useState("")
+  const [name, setName] = useState("")
   const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
   }
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value)
+  const handleNameChange = (e) => {
+    setName(e.target.value)
   }
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value)
-  }
-
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value)
   }
 
   const handleSubmit = (e) => {
@@ -57,11 +52,11 @@ const Signup = () => {
             variant="outlined"
           />
           <TextField
-            onChange={handleUsernameChange}
-            value={username}
+            onChange={handleNameChange}
+            value={name}
             fullWidth
             id="outlined-basic" 
-            label="username"
+            label="name"
             required
             sx={{
               margin: 1,
@@ -75,19 +70,6 @@ const Signup = () => {
             fullWidth
             id="outlined-basic" 
             label="password"
-            required
-            sx={{
-              margin: 1,
-              display: 'block'
-            }}
-            variant="outlined"
-          />
-          <TextField
-            onChange={handleConfirmPasswordChange}
-            value={confirmPassword}
-            fullWidth
-            id="outlined-basic" 
-            label="confirmPassword"
             required
             sx={{
               margin: 1,
