@@ -174,7 +174,7 @@ const AddPark = () => {
                     margin: 1
                   }}
                 >
-                  Add Park
+                  add park
                 </Button>
               </form>
             </Box>
