@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import bmxlogo from '../images/bmxlogo.jpg'
 import { Link } from 'react-router-dom';
+import { display } from '@mui/system';
 
 const logo = bmxlogo
 
@@ -17,26 +18,40 @@ const NavBar = () => {
         >
             <AppBar position="static" color=''>
                 <Toolbar>
-                    <Box 
-                        component="img"
-                        sx={{
-                            height: 20,
-                            width: 20,
-                            marginRight: 1
+                    <Link to="/" 
+                        style={{
+                            textDecoration:"none",
+                            display: "flex",
+                            alignItems: "center"
                         }}
-                        alt="bmxlogo"
-                        src={logo}
-                    />
-                    <Typography 
-                        variant="h5" 
-                        component="div" 
-                        sx={{ flexGrow: 1 }} 
-                        color='primary'
                     >
-                        BMX Parks
-                    </Typography>
+                        <Box 
+                            component="img"
+                            sx={{
+                                height: 20,
+                                width: 20,
+                                marginRight: 1
+                            }}
+                            alt="bmxlogo"
+                            src={logo}
+                        />
+                        <Typography 
+                            variant="h5" 
+                            component="div" 
+                            sx={{ flexGrow: 1 }} 
+                            color='primary'
+                        >
+                            BMX Parks
+                        </Typography>
+                    </Link>
                     <AddPark />
-                    <Link to="/signup"><Button color="primary">Log Out</Button></Link>
+                    <Link to="/signup" 
+                        style={{
+                            textDecoration:"none"
+                        }}
+                    >
+                        <Button color="primary">Log Out</Button>
+                    </Link>
                     
                 </Toolbar>
             </AppBar>
