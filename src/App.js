@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import { ParkProvider } from "./context/ParkContext";
+import Login from './auth/Login';
 import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
@@ -25,6 +26,7 @@ function App() {
             <Routes>
               <Route path="/" element={<ParkList />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </main>
         </div>

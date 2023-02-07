@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../store/authSlice'
+import { loginUser } from '../features/users/authSlice'
 
 const Login = () => {
     const dispatch  = useDispatch();
@@ -14,7 +14,7 @@ const Login = () => {
     const onEmailChanged = e => setEmail(e.target.value)
     const onPasswordChanged = e => setPassword(e.target.value)
     
-    const canSave = [username, password].every(Boolean) && addRequestStatus === 'idle';
+    const canSave = [email, password].every(Boolean) && addRequestStatus === 'idle';
 
     const onLogin = async () => {
         try {

@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 const logo = bmxlogo
 
+const user = true
+
 const NavBar = () => {
     
     return (
@@ -48,16 +50,36 @@ const NavBar = () => {
                             BMX Parks
                         </Typography>
                     </Link>
-                    <Box>
-                        <AddPark />
-                        <Link to="/signup" 
-                            style={{
-                                textDecoration:"none"
-                            }}
-                        >
-                            <Button color="primary">Log Out</Button>
-                        </Link>
-                    </Box>
+                    { user ? (
+                        <Box>
+                            <AddPark />
+                            <Link to="/signup" 
+                                style={{
+                                    textDecoration:"none"
+                                }}
+                            >
+                                <Button color="primary">log out</Button>
+                            </Link>
+                        </Box>
+                    ) : (
+                        <Box>
+                            <Link to="/login" 
+                                style={{
+                                    textDecoration:"none"
+                                }}
+                            >
+                                <Button color="primary">log in</Button>
+                            </Link>
+                            <Link to="/signup" 
+                                style={{
+                                    textDecoration:"none"
+                                }}
+                            >
+                                <Button color="primary">sign up</Button>
+                            </Link>
+                        </Box>
+                    )
+                    }
                 </Toolbar>
             </AppBar>
         </Box>
