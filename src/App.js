@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import { ParkProvider } from "./context/ParkContext";
-import Signup from "./components/Signup";
+import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
 import { createTheme } from '@mui/material/styles'

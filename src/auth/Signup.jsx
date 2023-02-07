@@ -1,13 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import { addNewUser } from '../features/users/authSlice'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 const Signup = () => {
+  const dispatch = useDispatch()
 
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
+
+  const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -21,8 +26,20 @@ const Signup = () => {
     setPassword(e.target.value)
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const canSave = [email, name, password].every(Boolean) && addRequestStatus === "idle"
+
+  const onSignUp = () => {
+    try {
+        setAddRequestStatus('pending')
+        dispatch(addNewUser({ email, name, password })).unwrap()
+        setEmail('')
+        setName('')
+        setPassword('')
+    } catch (err) {
+        console.error('Failed to save the post', err)
+    } finally {
+        setAddRequestStatus('idle')
+    }        
   }
 
   return (
@@ -36,7 +53,7 @@ const Signup = () => {
           flexGrow: 1 
         }}
       >
-        <form noValidate autoComplete="off" className='form' onSubmit={handleSubmit}>
+        <form noValidate autoComplete="off" className='form' onSubmit={onSignUp}>
           <h1>new user</h1>
           <TextField
             onChange={handleEmailChange}
@@ -80,6 +97,7 @@ const Signup = () => {
           <Button
             type="submit"
             color="primary"
+            disabled={!canSave}
             sx={{
               margin: 1
             }}
