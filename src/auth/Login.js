@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../features/users/authSlice'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Login = () => {
     const dispatch  = useDispatch();
@@ -11,16 +13,15 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
         
-    const onEmailChanged = e => setEmail(e.target.value)
-    const onPasswordChanged = e => setPassword(e.target.value)
+    const handleEmailChange = e => setEmail(e.target.value)
+    const handlePasswordChange = e => setPassword(e.target.value)
     
     const canSave = [email, password].every(Boolean) && addRequestStatus === 'idle';
 
     const onLogin = async () => {
         try {
             setAddRequestStatus('pending')
-            const data = await dispatch(loginUser({ email, password })).unwrap()
-            
+            const data = await dispatch(loginUser({ email, password })).unwrap()            
             setEmail('')
             setPassword('')
             navigate('/')
@@ -36,15 +37,44 @@ const Login = () => {
             <div>LOGIN</div>
             <form>
                 <label htmlFor="username">EMAIL:</label>
-                <input 
-                    type="text"
-                    name="password"
+                <TextField
+                    onChange={handleEmailChange}
                     value={email}
-                    onChange={onEmailChanged}
+                    fullWidth
+                    id="outlined-basic" 
+                    label="email"
+                    required
+                    sx={{
+                        margin: 1,
+                        display: 'block'
+                    }}
+                    variant="outlined"
                 />
                 <label htmlFor="password">PASSWORD:</label>
-                <input type='password' name="password" value={password} onChange={onPasswordChanged} />
-                <button type="button" disabled={!canSave} onClick={onLogin}>Log In</button>
+                <TextField
+                    onChange={handlePasswordChange}
+                    value={password}
+                    fullWidth
+                    id="outlined-basic" 
+                    label="password"
+                    required
+                    sx={{
+                        margin: 1,
+                        display: 'block'
+                    }}
+                    variant="outlined"
+                />
+                <Button 
+                    type="button"
+                    color="primary"
+                    sx={{
+                        margin: 1
+                    }} 
+                    disabled={!canSave} 
+                    onClick={onLogin}
+                >
+                    Log In
+                </Button>
             </form>
         </div>
     )
