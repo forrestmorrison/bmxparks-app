@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import ParkList from "./components/ParkList";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 const theme = createTheme({
   palette: {
@@ -18,20 +20,22 @@ const theme = createTheme({
 function App() {
 
   return (
-    <ParkProvider>
-      <ThemeProvider theme={theme}>
-        <div className="app">
-          <NavBar />
-          <main>
-            <Routes>
-              <Route path="/" element={<ParkList />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </main>
-        </div>
-      </ThemeProvider>
-    </ParkProvider>
+    <Provider store={store}>
+      <ParkProvider>
+        <ThemeProvider theme={theme}>
+          <div className="app">
+            <NavBar />
+            <main>
+              <Routes>
+                <Route exact path="/" element={<ParkList />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+              </Routes>
+            </main>
+          </div>
+        </ThemeProvider>
+      </ParkProvider>
+    </Provider>
   );
 }
 

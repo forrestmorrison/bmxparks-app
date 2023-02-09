@@ -9,7 +9,7 @@ const Signup = () => {
   const dispatch = useDispatch()
 
   const [email, setEmail] = useState("")
-  const [name, setName] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
   const [addRequestStatus, setAddRequestStatus] = useState("idle")
@@ -18,22 +18,23 @@ const Signup = () => {
     setEmail(e.target.value)
   }
 
-  const handleNameChange = (e) => {
-    setName(e.target.value)
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value)
   }
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value)
   }
 
-  const canSave = [email, name, password].every(Boolean) && addRequestStatus === "idle"
+  const canSave = [email, username, password].every(Boolean) && addRequestStatus === "idle"
 
-  const onSignUp = () => {
+  const onSignUp = (e) => {
+    e.preventDefault()
     try {
         setAddRequestStatus('pending')
-        dispatch(addNewUser({ email, name, password })).unwrap()
+        dispatch(addNewUser({ email, username, password })).unwrap()
         setEmail('')
-        setName('')
+        setUsername('')
         setPassword('')
     } catch (err) {
         console.error('Failed to save the post', err)
@@ -69,8 +70,8 @@ const Signup = () => {
             variant="outlined"
           />
           <TextField
-            onChange={handleNameChange}
-            value={name}
+            onChange={handleUsernameChange}
+            value={username}
             fullWidth
             id="outlined-basic" 
             label="name"

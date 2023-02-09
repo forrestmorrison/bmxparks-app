@@ -16,6 +16,7 @@ const getFromLocalStorage = (key) => {
 export const addNewUser = createAsyncThunk('users/addNewUser', async (newUser) => {
     const response = await axios.post(`${USERS_URL}/signup`, newUser)
     saveToLocalStorage(response.data.token)
+    console.log('response', response)
     return response.data
 })
 

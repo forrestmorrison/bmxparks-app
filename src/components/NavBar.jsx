@@ -6,12 +6,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import bmxlogo from '../images/bmxlogo.jpg'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const logo = bmxlogo
 
-const user = false
-
 const NavBar = () => {
+
+    const user = useSelector(state => state.auth.user);
+    console.log('user', user)
     
     return (
         <Box 
