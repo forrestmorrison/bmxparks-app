@@ -11,7 +11,7 @@ const ParkList = () => {
 
     return (
         <div className="park-list">
-            {parks.map((item) => (
+            {parks.sort((a, b) => a.name > b.name ? 1 : -1).map((item) => (
                 <ParkItem key={item.id} item={item} />
             ))}
         </div>
