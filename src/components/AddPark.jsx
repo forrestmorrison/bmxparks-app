@@ -1,4 +1,6 @@
 import { useContext, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addNewPark } from '../features/parks/parkSlice';
 import ParkContext from '../context/ParkContext';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,6 +14,7 @@ import RadioGroup from '@mui/material/RadioGroup'
 import TextField from '@mui/material/TextField';
 
 const AddPark = () => {
+  const dispatch = useDispatch()
 
   const [name, setName] = useState('')
   const [address, setAddress] = useState('')
@@ -23,6 +26,8 @@ const AddPark = () => {
     street: false,
   })
   const [access, setAccess] = useState('')
+
+  const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
   const {addPark} = useContext(ParkContext)
 
@@ -54,6 +59,24 @@ const AddPark = () => {
   };
 
   const { dirt, race, street } = type;
+
+  const canSave = [name, address, type, access].every(Boolean) && addRequestStatus === "idle"
+
+  const onAddPark = (e) => {
+    e.preventDefault()
+    try {
+        setAddRequestStatus('pending')
+        dispatch(addNewPark({ name, address, type })).unwrap()
+        setName('')
+        setAddress('')
+        setType(null)
+        setAccess('')
+    } catch (err) {
+        console.error('Failed to save the post', err)
+    } finally {
+        setAddRequestStatus('idle')
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -170,6 +193,7 @@ const AddPark = () => {
                 <Button
                   type="submit"
                   color="primary"
+                  disabled={!canSave}
                   sx={{
                     margin: 1
                   }}

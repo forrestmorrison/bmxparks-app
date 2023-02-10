@@ -3,14 +3,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 const PARKS_URL = "/"
 
-const initialState = { park: undefined }
+const initialState = { park: [] }
 
 const saveToLocalStorage = (token) => {
     localStorage.setItem('token', token)
 }
 
-export const addNewPark = createAsyncThunk('users/addNewUser', async (newPark) => {
-    const response = await axios.post(`${PARKS_URL}/signup`, newPark)
+export const addNewPark = createAsyncThunk('parks/addNewPark', async (newPark) => {
+    const response = await axios.post(`${PARKS_URL}/addpark`, newPark)
     saveToLocalStorage(response.data.token)
     console.log('response', response)
     return response.data
