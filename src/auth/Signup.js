@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { addNewUser } from '../features/users/authSlice'
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import { Box, Button, TextField } from '@mui/material';
 
 const Signup = () => {
   const dispatch = useDispatch()

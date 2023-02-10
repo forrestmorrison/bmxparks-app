@@ -2,16 +2,7 @@ import { useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewPark } from '../features/parks/parkSlice';
 import ParkContext from '../context/ParkContext';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel'
-import FormGroup from '@mui/material/FormGroup';
-import FormLabel from '@mui/material/FormLabel';
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import TextField from '@mui/material/TextField';
+import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
 
 const AddPark = () => {
   const dispatch = useDispatch()
