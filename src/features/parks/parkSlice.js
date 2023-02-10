@@ -1,37 +1,36 @@
 import axios from "axios"
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
-const PARKS_URL = "/"
+const PARKS_URL = "/parks"
 
-const initialState = { park: [] }
+const initialState = { parks: [] }
 
-const saveToLocalStorage = (token) => {
-    localStorage.setItem('token', token)
-}
+export const getParks = createAsyncThunk('parks/getParks', async (newPark) => {
+    const response = await axios.get(`${PARKS_URL}`, newPark)
+    console.log('response', response)
+    return response.data
+})
 
 export const addNewPark = createAsyncThunk('parks/addNewPark', async (newPark) => {
-    const response = await axios.post(`${PARKS_URL}/addpark`, newPark)
-    saveToLocalStorage(response.data.token)
+    const response = await axios.post(`${PARKS_URL}`, newPark)
     console.log('response', response)
     return response.data
 })
 
 export const parkSlice = createSlice({
-    name: 'park',
+    name: 'parks',
     initialState,
-    reducers: {
-        addPark: (state, action) => {
-            state.value = action.payload
-        }
-    },
+    reducers: {},
     extraReducers(builder) {
         builder
             .addCase(addNewPark.fulfilled, (state, action) => {
-                state.park = action.payload.park
+                state.parks.push(action.payload)
+                state.parks.sort((a, b) => a.name > b.name ? 1 : -1)
+            })
+            .addCase(getParks.fulfilled, (state, action) => {
+                state.parks = action.payload
             })
     }
 })
-
-export const { addPark } = parkSlice.actions
 
 export default parkSlice.reducer

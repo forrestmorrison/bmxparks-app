@@ -1,8 +1,13 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewPark } from '../features/parks/parkSlice';
-import ParkContext from '../context/ParkContext';
 import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
+
+const TYPES = {
+  dirt: false,
+  race: false,
+  street: false,
+}
 
 const AddPark = () => {
   const dispatch = useDispatch()
@@ -11,16 +16,10 @@ const AddPark = () => {
   const [address, setAddress] = useState('')
   const [nameError, setNameError] = useState(false)
   const [addressError, setAddressError] = useState(false)
-  const [type, setType] = useState({
-    dirt: false,
-    race: false,
-    street: false,
-  })
+  const [type, setType] = useState(TYPES)
   const [access, setAccess] = useState('')
 
   const [addRequestStatus, setAddRequestStatus] = useState("idle")
-
-  const {addPark} = useContext(ParkContext)
 
   const [modal, setModal] = useState(false)
 
@@ -57,41 +56,19 @@ const AddPark = () => {
     e.preventDefault()
     try {
         setAddRequestStatus('pending')
-        dispatch(addNewPark({ name, address, type })).unwrap()
+        const typeStr = Object.keys(type).reduce((arr, value) => {
+          if (type[value]) arr.push(value)
+          return arr
+        }, []).join(',')
+        dispatch(addNewPark({ name, address, type: typeStr, user_id: 1, access })).unwrap()
         setName('')
         setAddress('')
-        setType(null)
+        setType(TYPES)
         setAccess('')
     } catch (err) {
         console.error('Failed to save the post', err)
     } finally {
         setAddRequestStatus('idle')
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    setNameError(false)
-    setAddressError(false)
-
-    if (name === '') {
-      setNameError(true)
-    }
-
-    if (address === '') {
-      setAddressError(true)
-    }
-
-    if (name.trim().length > 1 && address.trim().length > 1) {
-      const newPark = {
-        name,
-        address,
-        type,
-        access
-      }
-
-      addPark(newPark)
     }
   }
 
@@ -113,7 +90,7 @@ const AddPark = () => {
                 flexGrow: 1 
               }}
             >
-              <form noValidate autoComplete="off" className='form' onSubmit={handleSubmit}>
+              <form noValidate autoComplete="off" className='form' onSubmit={onAddPark}>
                 <h1>add park</h1>
                 <TextField
                   onChange={handleNameChange}

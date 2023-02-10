@@ -1,17 +1,24 @@
-import { useContext } from "react"
+import { useEffect } from "react"
 import ParkItem from "./ParkItem"
-import ParkContext from "../context/ParkContext"
+import { useDispatch, useSelector } from "react-redux"
+import { getParks } from "../features/parks/parkSlice"
 
 const ParkList = () => {
-    const {parks} = useContext(ParkContext)
+    const dispatch = useDispatch()
 
-    if(!parks || parks.length === 0) {
+    const parks = useSelector(state => state.parks.parks)
+
+    useEffect(() => {
+        dispatch(getParks())
+    }, [])
+
+    if(parks.length === 0) {
         return <p>no parks yet</p>
     }
 
     return (
         <div className="park-list">
-            {parks.sort((a, b) => a.name > b.name ? 1 : -1).map((item) => (
+            {parks.map((item) => (
                 <ParkItem key={item.id} item={item} />
             ))}
         </div>

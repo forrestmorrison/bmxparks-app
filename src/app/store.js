@@ -5,6 +5,6 @@ import parkReducer from "../features/parks/parkSlice"
 export const store = configureStore({
     reducer: {
         auth: authReducer,
-        park: parkReducer
+        parks: parkReducer
     }
 })
