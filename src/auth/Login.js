@@ -34,9 +34,8 @@ const Login = () => {
 
     return (
         <div>
-            <div>LOGIN</div>
+            <h1>LOGIN</h1>
             <form>
-                <label htmlFor="username">EMAIL:</label>
                 <TextField
                     onChange={handleEmailChange}
                     value={email}
@@ -50,7 +49,6 @@ const Login = () => {
                     }}
                     variant="outlined"
                 />
-                <label htmlFor="password">PASSWORD:</label>
                 <TextField
                     onChange={handlePasswordChange}
                     value={password}
