@@ -14,8 +14,6 @@ const AddPark = () => {
 
   const [name, setName] = useState('')
   const [address, setAddress] = useState('')
-  const [nameError, setNameError] = useState(false)
-  const [addressError, setAddressError] = useState(false)
   const [type, setType] = useState(TYPES)
   const [access, setAccess] = useState('')
 
@@ -104,7 +102,6 @@ const AddPark = () => {
                     display: 'block'
                   }}
                   variant="outlined"
-                  error={nameError}
                 />
                 <TextField
                   onChange={handleAddressChange}
@@ -118,7 +115,6 @@ const AddPark = () => {
                     display: 'block'
                   }}
                   variant="outlined"
-                  error={addressError}
                 />
                 <Box>
                   <FormControl sx={{ m: 1, display: 'flex', flexDirection: 'row' }} component="fieldset" variant="standard">

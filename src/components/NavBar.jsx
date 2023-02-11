@@ -1,5 +1,6 @@
 import AddPark from './AddPark';
-import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
+import HamMenu from './HamMenu';
+import { AppBar, Box, Button, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import bmxlogo from '../images/bmxlogo.jpg'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -9,7 +10,8 @@ const logo = bmxlogo
 const NavBar = () => {
 
     const user = useSelector(state => state.auth.user);
-    console.log('user', user)
+    const theme = useTheme()
+    const isMatch = useMediaQuery(theme.breakpoints.down('md'))
     
     return (
         <Box 
@@ -47,36 +49,42 @@ const NavBar = () => {
                         >
                             BMX Parks
                         </Typography>
-                    </Link>
-                    { user ? (
-                        <Box>
-                            <AddPark />
-                            <Link to="/signup" 
-                                style={{
-                                    textDecoration:"none"
-                                }}
-                            >
-                                <Button color="primary">log out</Button>
-                            </Link>
-                        </Box>
-                    ) : (
-                        <Box>
-                            <Link to="/login" 
-                                style={{
-                                    textDecoration:"none"
-                                }}
-                            >
-                                <Button color="primary">log in</Button>
-                            </Link>
-                            <Link to="/signup" 
-                                style={{
-                                    textDecoration:"none"
-                                }}
-                            >
-                                <Button color="primary">sign up</Button>
-                            </Link>
-                        </Box>
-                    )
+                    </Link>  
+                    {   isMatch ? (
+                            <HamMenu />
+                        ) : (
+                            <></>
+                        )
+                        &&
+                        user ? (
+                            <Box>
+                                <AddPark />
+                                <Link to="/signup" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">log out</Button>
+                                </Link>
+                            </Box>
+                        ) : (
+                            <Box>
+                                <Link to="/login" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">log in</Button>
+                                </Link>
+                                <Link to="/signup" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">sign up</Button>
+                                </Link>
+                            </Box>
+                        )
                     }
                 </Toolbar>
             </AppBar>
