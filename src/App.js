@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom"
-// import { ParkProvider } from "./context/ParkContext";
 import Login from './auth/Login';
 import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
@@ -21,7 +20,6 @@ function App() {
 
   return (
     <Provider store={store}>
-      {/* <ParkProvider> */}
         <ThemeProvider theme={theme}>
           <div className="app">
             <NavBar />
@@ -34,7 +32,6 @@ function App() {
             </main>
           </div>
         </ThemeProvider>
-      {/* </ParkProvider> */}
     </Provider>
   );
 }

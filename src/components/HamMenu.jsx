@@ -1,7 +1,8 @@
-import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import AddPark from './AddPark'
 
 const HamMenu = () => {
 
@@ -19,12 +20,12 @@ const HamMenu = () => {
                     <List>
                         <ListItemButton>
                             <ListItemIcon>
-                                <ListItemText>add park</ListItemText>
+                                <AddPark />
                             </ListItemIcon>
                         </ListItemButton>
                         <ListItemButton>
                             <ListItemIcon>
-                                <ListItemText>log out</ListItemText>
+                                <Typography>log out</Typography>
                             </ListItemIcon>
                         </ListItemButton>
                     </List>
