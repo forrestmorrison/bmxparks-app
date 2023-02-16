@@ -49,19 +49,6 @@ h1 {
 
 
 
-#map {
-  height: 400px; /* The height is 400 pixels */
-  width: 100%; /* The width is the width of the web page */
-}
-
-.map-container {
-  width: 90%;
-  height: 55vh;
-  margin-top: 10px;
-}
-
-
-
 body.active-modal {
   overflow-y: hidden;
 }
@@ -85,6 +72,7 @@ body.active-modal {
 .overlay {
   background: rgba(49,49,49,0.8);
 }
+
 .modal-content {
   position: absolute;
   top: 50%;
@@ -105,5 +93,5 @@ body.active-modal {
   padding: 0px 5px;
   background-color: white;
   border: none;
-  color: red;
+  color: purple;
 }

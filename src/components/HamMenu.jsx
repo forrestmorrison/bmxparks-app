@@ -1,4 +1,5 @@
-import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Button, Drawer, IconButton, List, ListItemButton, ListItemIcon } from '@mui/material'
+import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
@@ -25,7 +26,13 @@ const HamMenu = () => {
                         </ListItemButton>
                         <ListItemButton>
                             <ListItemIcon>
-                                <Typography>log out</Typography>
+                                <Link to="/signup" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">log out</Button>
+                                </Link>
                             </ListItemIcon>
                         </ListItemButton>
                     </List>
@@ -33,19 +40,31 @@ const HamMenu = () => {
                     <List>
                         <ListItemButton>
                             <ListItemIcon>
-                                <ListItemText>log in</ListItemText>
+                                <Link to="/login" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">log in</Button>
+                                </Link>
                             </ListItemIcon>
                         </ListItemButton>
                         <ListItemButton>
                             <ListItemIcon>
-                                <ListItemText>sign up</ListItemText>
+                                <Link to="/signup" 
+                                    style={{
+                                        textDecoration:"none"
+                                    }}
+                                >
+                                    <Button color="primary">sign up</Button>
+                                </Link>
                             </ListItemIcon>
                         </ListItemButton>
                     </List>
                 ) }
             </Drawer>
             <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuIcon />
+                <MenuIcon color='primary'/>
             </IconButton>
         </>
     )
