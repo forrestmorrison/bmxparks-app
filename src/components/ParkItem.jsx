@@ -8,7 +8,7 @@ const ParkItem = ({item}) => {
     return (
         <Grid item
             border={'solid 1px purple'} 
-            xs={10} sm={4} md={3}
+            xs={10} md={5}
             sx={{
                 margin: 2,
                 padding: 1

@@ -57,7 +57,7 @@ const AddPark = () => {
         const typeStr = Object.keys(type).reduce((arr, value) => {
           if (type[value]) arr.push(value)
           return arr
-        }, []).join(',')
+        }, []).join(', ')
         dispatch(addNewPark({ name, address, type: typeStr, user_id: 1, access })).unwrap()
         setName('')
         setAddress('')
