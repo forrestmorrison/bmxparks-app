@@ -18,7 +18,10 @@ const ParkList = () => {
     }
 
     return (
-        <Grid container>
+        <Grid container
+            alignItems="center"
+            justifyContent="center"
+        >
             {parks.map((item) => (
                     <ParkItem key={item.id} item={item} />
             ))}
