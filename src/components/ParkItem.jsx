@@ -1,12 +1,13 @@
-import Card from '@mui/material/Card'
 import PropTypes from 'prop-types'
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
+import { deletePark } from '../features/parks/parkSlice'
 
 const ParkItem = ({item}) => {
     console.log('item', item)
     
     return (
         <Grid item
+            className='grid-item'
             border={'solid 1px purple'} 
             xs={10} md={5}
             sx={{
@@ -18,6 +19,7 @@ const ParkItem = ({item}) => {
             <div className='park-address-display'>{item.address}</div>
             <div className='park-address-display'>type: {item.park_type}</div>
             <div className='park-address-display'>access: {item.access}</div>
+            <Button onClick={deletePark(item.id)}>delete</Button>
         </Grid>
     )
 }

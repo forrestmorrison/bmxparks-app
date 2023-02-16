@@ -5,8 +5,8 @@ const PARKS_URL = "/parks"
 
 const initialState = { parks: [] }
 
-export const getParks = createAsyncThunk('parks/getParks', async (newPark) => {
-    const response = await axios.get(`${PARKS_URL}`, newPark)
+export const getParks = createAsyncThunk('parks/getParks', async (parks) => {
+    const response = await axios.get(`${PARKS_URL}`, parks)
     console.log('response', response)
     return response.data
 })
@@ -14,6 +14,11 @@ export const getParks = createAsyncThunk('parks/getParks', async (newPark) => {
 export const addNewPark = createAsyncThunk('parks/addNewPark', async (newPark) => {
     const response = await axios.post(`${PARKS_URL}`, newPark)
     console.log('response', response)
+    return response.data
+})
+
+export const deletePark = createAsyncThunk('parks/deletePark', async (park) => {
+    const response = await axios.delete(`${PARKS_URL}`, park)
     return response.data
 })
 
@@ -30,6 +35,7 @@ export const parkSlice = createSlice({
             .addCase(getParks.fulfilled, (state, action) => {
                 state.parks = action.payload
             })
+            
     }
 })
 
