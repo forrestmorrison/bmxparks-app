@@ -1,7 +1,8 @@
 import { useEffect } from "react"
-import ParkItem from "./ParkItem"
 import { useDispatch, useSelector } from "react-redux"
 import { getParks } from "../features/parks/parkSlice"
+import { Grid } from "@mui/material"
+import ParkItem from "./ParkItem"
 
 const ParkList = () => {
     const dispatch = useDispatch()
@@ -17,11 +18,11 @@ const ParkList = () => {
     }
 
     return (
-        <div className="park-list">
+        <Grid container>
             {parks.map((item) => (
-                <ParkItem key={item.id} item={item} />
+                    <ParkItem key={item.id} item={item} />
             ))}
-        </div>
+        </Grid>
     )
 }
 

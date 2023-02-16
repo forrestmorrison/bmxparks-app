@@ -1,11 +1,12 @@
 import Card from '@mui/material/Card'
 import PropTypes from 'prop-types'
+import { Grid } from '@mui/material'
 
 const ParkItem = ({item}) => {
     console.log('item', item)
     
     return (
-        <Card
+        <Grid item xs={12} sm={6} md={3}
             sx={{
                 margin: 2,
                 padding: 1
@@ -15,7 +16,7 @@ const ParkItem = ({item}) => {
             <div className='park-address-display'>{item.address}</div>
             <div className='park-address-display'>type: {item.park_type}</div>
             <div className='park-address-display'>access: {item.access}</div>
-        </Card>
+        </Grid>
     )
 }
 
