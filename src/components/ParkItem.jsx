@@ -1,9 +1,22 @@
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux';
 import { Button, Grid } from '@mui/material'
 import { deletePark } from '../features/parks/parkSlice'
 
 const ParkItem = ({item}) => {
     console.log('item', item)
+
+    const dispatch = useDispatch()
+
+
+    const onDeletePark = (e) => {
+        e.preventDefault()
+        try {           
+            dispatch(deletePark({ item })).unwrap()
+        } catch (err) {
+            console.error('Failed to delete the post', err)
+        } 
+      }
     
     return (
         <Grid item
@@ -19,7 +32,7 @@ const ParkItem = ({item}) => {
             <div className='park-address-display'>{item.address}</div>
             <div className='park-address-display'>type: {item.park_type}</div>
             <div className='park-address-display'>access: {item.access}</div>
-            <Button onClick={deletePark(item.id)}>delete</Button>
+            <Button onClick={onDeletePark}>delete</Button>
         </Grid>
     )
 }
