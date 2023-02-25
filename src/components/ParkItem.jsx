@@ -30,8 +30,8 @@ const ParkItem = ({item}) => {
         >
             <div className='park-name-display'>{item.name}</div>
             <div className='park-address-display'>{item.address}</div>
-            <div className='park-address-display'>type: {item.park_type}</div>
-            <div className='park-address-display'>access: {item.access}</div>
+            <div>type: {item.park_type}</div>
+            <div>access: {item.access}</div>
             <Button onClick={onDeletePark}>delete</Button>
         </Grid>
     )

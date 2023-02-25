@@ -1,4 +1,5 @@
 import ParkList from "../components/ParkList"
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
 const Home = () => {
@@ -11,7 +12,16 @@ const Home = () => {
         user ? (
           <ParkList />
         ) : (
-          <h1>Welcome to the BMX Parks app!</h1>
+          <>
+            <h1>Welcome to the BMX Parks app!</h1>
+            <Link to="/about" 
+                style={{
+                    textDecoration:"none"
+                }}
+            >
+                <Button color="primary">about this app</Button>
+            </Link>
+          </>
         )
       }
     </>
