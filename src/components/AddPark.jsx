@@ -1,7 +1,18 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewPark } from '../features/parks/parkSlice';
-import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
+import { 
+  Box, 
+  Button, 
+  Checkbox, 
+  FormControl, 
+  FormControlLabel, 
+  FormGroup, 
+  FormLabel, 
+  Radio, 
+  RadioGroup, 
+  TextField 
+} from '@mui/material';
 
 const TYPES = {
   dirt: false,
