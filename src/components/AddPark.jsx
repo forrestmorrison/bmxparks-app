@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Modal from "react-modal"
 import { useDispatch } from 'react-redux';
 import { addNewPark } from '../features/parks/parkSlice';
 import { 
@@ -14,11 +15,26 @@ import {
   TextField 
 } from '@mui/material';
 
+const customStyles = {
+  content: {
+    width: "600px",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    position: "relative",
+  },
+}
+
 const TYPES = {
   dirt: false,
   race: false,
   street: false,
 }
+
+Modal.setAppElement("#root")
 
 const AddPark = () => {
   const dispatch = useDispatch()
@@ -30,17 +46,10 @@ const AddPark = () => {
 
   const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
-  const [modal, setModal] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const toggleModal = () => {
-    setModal(!modal)
-  }
-
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+  const openModal = () => setModalIsOpen(true)
+  const closeModal = () => setModalIsOpen(false)
 
   const handleNameChange = (e) => {
     setName(e.target.value)
@@ -83,12 +92,15 @@ const AddPark = () => {
 
   return (
     <>
-      <Button onClick={toggleModal} className="btn-modal">add park</Button>
+      <Button onClick={openModal} className="btn-modal">add park</Button>
 
-      {modal && (
-        <div className="modal">
-          <div className="overlay" onClick={toggleModal}></div>
-          <div className="modal-content">
+
+        <Modal 
+          isOpen={modalIsOpen} 
+          onRequestClose={closeModal} 
+          style={customStyles}
+          contentLabel="add note"
+        >
             <Box
               sx={{
                 width: {
@@ -177,9 +189,7 @@ const AddPark = () => {
                 </Button>
               </form>
             </Box>
-          </div>
-        </div>
-      )}
+        </Modal>
     </>
   )
 }
