@@ -1,19 +1,29 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getParks } from "../features/parks/parkSlice"
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { useParams } from "react-router-dom";
+import { showPark } from "../features/parks/parkSlice"
 
 const ParkPage = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    const parks = useSelector(state => state.parks.parks)
+    const { parkId } = useParams();
+
+    const [park, setPark] = useState()
 
     useEffect(() => {
-        dispatch(getParks())
-    }, [])
+        dispatch(showPark(parkId)).unwrap()
+        .then(parkData => {
+            setPark(parkData)
+        })
+    }, [parkId])
 
     return (
         <div>
             current park
+            {park && <>
+                <div>Name {park.name}</div>
+                <div>Address {park.address}</div>
+            </>}
         </div>
     )
 }

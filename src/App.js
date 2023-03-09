@@ -9,6 +9,7 @@ import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import PrivateRoute from "./components/PrivateRoute";
 
 const theme = createTheme({
   palette: {
@@ -27,11 +28,11 @@ function App() {
             <NavBar />
             <main>
               <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/parks/:parkId" element={<ParkPage />} />
+                <Route path="/parks/:parkId" element={<PrivateRoute><ParkPage /></PrivateRoute> } />
               </Routes>
             </main>
           </div>

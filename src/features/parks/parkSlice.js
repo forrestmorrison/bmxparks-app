@@ -11,15 +11,20 @@ export const getParks = createAsyncThunk('parks/getParks', async (parks) => {
     return response.data
 })
 
+export const showPark = createAsyncThunk('parks/showPark', async (parkId) => {
+    const response = await axios.get(`${PARKS_URL}/${parkId}`)
+    return response.data
+})
+
 export const addNewPark = createAsyncThunk('parks/addNewPark', async (newPark) => {
     const response = await axios.post(`${PARKS_URL}`, newPark)
     // console.log('response', response)
     return response.data
 })
 
-export const deletePark = createAsyncThunk('parks/deletePark', async (park) => {
-    const response = await axios.delete(`${PARKS_URL}`, park)
-    return response.data
+export const deletePark = createAsyncThunk('parks/deletePark', async (parkId) => {
+    await axios.delete(`${PARKS_URL}/${parkId}`)
+    return parkId
 })
 
 export const parkSlice = createSlice({
@@ -35,6 +40,10 @@ export const parkSlice = createSlice({
             .addCase(getParks.fulfilled, (state, action) => {
                 state.parks = action.payload
             })
+            .addCase(deletePark.fulfilled, (state, action) => {
+                state.parks = state.parks.filter(park => park.id !== action.payload)
+            })
+
             
     }
 })

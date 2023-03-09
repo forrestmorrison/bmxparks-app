@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { checkUser } from "../features/users/authSlice"
 
 export const useAuthStatus = () => {
-    const [loggedIn, setLoggedIn] = useState(false)
-    const [checkingStatus, setCheckingStatus] = useState(true)
+    const [loading, setLoading] = useState(true)
 
+    const dispatch = useDispatch()
     const { user } = useSelector((state) => state.auth)
 
     useEffect(() => {
-        if(user) {
-            setLoggedIn(true)
-        } else {
-            setLoggedIn(false)
-        }
-        setCheckingStatus(false)
-    }, [user])
+        dispatch(checkUser()).unwrap()   
+        .finally(() => {
+            setLoading(false)
+        })     
+    }, [])
 
-    return { loggedIn, checkingStatus }
+    return { loading, user }
 }

@@ -1,11 +1,13 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { useAuthStatus } from "../hooks/useAuthStatus"
 
-const PrivateRoute = () => {
-    const { loggedIn, checkingStatus } = useAuthStatus()
+const PrivateRoute = ( { children }) => {
+    const { loading, user } = useAuthStatus()
+
+    if (loading) return "Loading...";
 
     return (
-        loggedIn ? <Outlet /> : <Navigate to="/login" />
+        user ? children : <Navigate to="/login" />
     )
 }
 
