@@ -1,8 +1,10 @@
+import ParkItem from "../components/ParkItem"
 
-
-const ParkPage = () => {
+const ParkPage = ({item}) => {
   return (
-    <div>ParkPage</div>
+    <div>
+        <ParkItem key={item.id} item={item} />
+    </div>
   )
 }
 
