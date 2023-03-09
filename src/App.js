@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom"
-import About from "./pages/About";
 import Login from './auth/Login';
 import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
+import About from "./pages/About";
 import Home from "./pages/Home";
+import ParkPage from "./pages/ParkPage";
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
 import { Provider } from "react-redux";
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/parks/:parkId" element={<ParkPage />} />
               </Routes>
             </main>
           </div>

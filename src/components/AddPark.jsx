@@ -83,6 +83,7 @@ const AddPark = () => {
         setAddress('')
         setType(TYPES)
         setAccess('')
+        closeModal()
     } catch (err) {
         console.error('Failed to save the post', err)
     } finally {

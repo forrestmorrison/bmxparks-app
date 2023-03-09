@@ -7,13 +7,13 @@ const initialState = { parks: [] }
 
 export const getParks = createAsyncThunk('parks/getParks', async (parks) => {
     const response = await axios.get(`${PARKS_URL}`, parks)
-    console.log('response', response)
+    // console.log('response', response)
     return response.data
 })
 
 export const addNewPark = createAsyncThunk('parks/addNewPark', async (newPark) => {
     const response = await axios.post(`${PARKS_URL}`, newPark)
-    console.log('response', response)
+    // console.log('response', response)
     return response.data
 })
 
