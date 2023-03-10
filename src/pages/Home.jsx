@@ -15,7 +15,6 @@ const Home = () => {
             >
                 <Button color="primary">about this app</Button>
             </Link>
-         
     </>
   )
 }
