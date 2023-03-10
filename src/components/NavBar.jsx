@@ -44,7 +44,10 @@ const NavBar = () => {
                         <Typography 
                             variant="h5" 
                             component="div" 
-                            sx={{ flexGrow: 1 }} 
+                            sx={{ 
+                                flexGrow: 1,
+                                fontWeight: "bold" 
+                            }} 
                             color='primary'
                         >
                             BMX Parks
@@ -61,27 +64,58 @@ const NavBar = () => {
                                 <AddPark />
                                 <Link to="/signup" 
                                     style={{
-                                        textDecoration:"none"
+                                        textDecoration: "none"
                                     }}
                                 >
-                                    <Button color="primary">log out</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            m: 1,
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                        }}
+                                    >
+                                        Log Out
+                                    </Button>
                                 </Link>
                             </Box>
                         ) : (
                             <Box>
                                 <Link to="/login" 
                                     style={{
-                                        textDecoration:"none"
+                                        textDecoration: "none"
                                     }}
                                 >
-                                    <Button color="primary">log in</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                        }}
+                                    >
+                                        Log In
+                                    </Button>
                                 </Link>
                                 <Link to="/signup" 
                                     style={{
-                                        textDecoration:"none"
+                                        textDecoration: "none"
                                     }}
                                 >
-                                    <Button color="primary">sign up</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                        }}
+                                    >
+                                        Sign Up
+                                    </Button>
                                 </Link>
                             </Box>
                         )

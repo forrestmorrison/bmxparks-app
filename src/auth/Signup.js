@@ -53,7 +53,7 @@ const Signup = () => {
         }}
       >
         <form noValidate autoComplete="off" className='form' onSubmit={onSignUp}>
-          <h1>new user</h1>
+          <h1>Sign Up</h1>
           <TextField
             onChange={handleEmailChange}
             value={email}
@@ -101,7 +101,7 @@ const Signup = () => {
               margin: 1
             }}
           >
-            create account
+            Create Account
           </Button>
         </form>
       </Box>          

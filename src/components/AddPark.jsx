@@ -93,7 +93,18 @@ const AddPark = () => {
 
   return (
     <>
-      <Button onClick={openModal} className="btn-modal">add park</Button>
+      <Button 
+        onClick={openModal} 
+        sx={{
+          m: 1,
+          "&:hover": {
+              backgroundColor: "purple",
+              color: "white",
+          }
+        }}
+      >
+        Add Park
+      </Button>
 
       <Modal 
         isOpen={modalIsOpen} 

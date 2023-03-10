@@ -22,7 +22,8 @@ const theme = createTheme({
       "Arial",
     ],
     button: {
-      textTransform: 'none'
+      textTransform: 'none',
+      fontWeight: "bold"
     }
   }
 })
@@ -36,11 +37,11 @@ function App() {
             <NavBar />
             <main>
               <Routes>
-                <Route exact path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+                <Route exact path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/parks/:parkId" element={<PrivateRoute><ParkPage /></PrivateRoute> } />
+                <Route path="/parks/:parkId" element={<PrivateRoute><ParkPage /></PrivateRoute>} />
               </Routes>
             </main>
           </div>

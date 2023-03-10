@@ -33,7 +33,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1>LOGIN</h1>
+            <h1>Log In</h1>
             <form>
                 <TextField
                     onChange={handleEmailChange}

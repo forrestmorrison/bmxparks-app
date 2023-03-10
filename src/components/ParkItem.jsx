@@ -15,15 +15,15 @@ const ParkItem = ({item}) => {
         } catch (err) {
             console.error('Failed to delete the post', err)
         } 
-      }
+    }
     
     return (
             <Grid item
                 className='grid-item'
-                border={'solid 1px purple'} 
-                xs={10} md={5}
+                
+                xs={8} md={10}
                 sx={{
-                    margin: 2,
+                    margin: 1,
                     padding: 1
                 }}
             >
@@ -31,7 +31,7 @@ const ParkItem = ({item}) => {
                     <div className='park-name-display'>{item.name}</div>
                     <div className='park-address-display'>{item.address}</div>
                 </Link>
-                    <button type="button" onClick={onDeletePark}>Delete</button>
+                    {/* <button type="button" onClick={onDeletePark}>Delete</button> */}
             </Grid>
         
     )
