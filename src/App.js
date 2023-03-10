@@ -16,6 +16,14 @@ const theme = createTheme({
       primary: {
           main: '#81007f'
       }
+  },
+  typography: {
+    fontFamily: [
+      "Arial",
+    ],
+    button: {
+      textTransform: 'none'
+    }
   }
 })
 

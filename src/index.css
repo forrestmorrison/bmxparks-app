@@ -22,6 +22,10 @@ h1 {
   color: purple;
 }
 
+h2 {
+  color: purple
+}
+
 .form-container {
   width: 500px;
 }
@@ -56,11 +60,10 @@ h1 {
 
 .park-page {
   position: relative;
-  text-align: left;
 }
 
 .park-page h1 {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .park-page header {
@@ -68,6 +71,20 @@ h1 {
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
+}
+
+.park-page section {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.park-page article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .page-data {

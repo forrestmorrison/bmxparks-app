@@ -95,102 +95,101 @@ const AddPark = () => {
     <>
       <Button onClick={openModal} className="btn-modal">add park</Button>
 
+      <Modal 
+        isOpen={modalIsOpen} 
+        onRequestClose={closeModal} 
+        style={customStyles}
+        contentLabel="add note"
+      >
+          <Box
+            sx={{
+              width: {
+                xs: 350,
+                sm: 500,
 
-        <Modal 
-          isOpen={modalIsOpen} 
-          onRequestClose={closeModal} 
-          style={customStyles}
-          contentLabel="add note"
-        >
-            <Box
-              sx={{
-                width: {
-                  xs: 350,
-                  sm: 500,
-
-                },
-                flexGrow: 1 
-              }}
-            >
-              <form noValidate autoComplete="off" className='form' onSubmit={onAddPark}>
-                <h1>add park</h1>
-                <TextField
-                  onChange={handleNameChange}
-                  value={name}
-                  fullWidth
-                  id="outlined-basic" 
-                  label="park name"
-                  required
+              },
+              flexGrow: 1 
+            }}
+          >
+            <form noValidate autoComplete="off" className='form' onSubmit={onAddPark}>
+              <h1>add park</h1>
+              <TextField
+                onChange={handleNameChange}
+                value={name}
+                fullWidth
+                id="outlined-basic" 
+                label="park name"
+                required
+                sx={{
+                  margin: 1,
+                  display: 'block'
+                }}
+                variant="outlined"
+              />
+              <TextField
+                onChange={handleAddressChange}
+                value={address}
+                fullWidth
+                id="outlined-basic" 
+                label="park address"
+                required
+                sx={{
+                  margin: 1,
+                  display: 'block'
+                }}
+                variant="outlined"
+              />
+              <Box>
+                <FormControl sx={{ m: 1, display: 'flex', flexDirection: 'row' }} component="fieldset" variant="standard">
+                  <FormLabel sx={{ m: 1 }}>type</FormLabel>
+                  <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox checked={dirt} onChange={handleTypeChange} name="dirt" />
+                      }
+                      label="dirt"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox checked={race} onChange={handleTypeChange} name="race" />
+                      }
+                      label="race"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox checked={street} onChange={handleTypeChange} name="street" />
+                      }
+                      label="street"
+                    />
+                  </FormGroup>
+                </FormControl>
+              </Box>
+              <Box>
+                <RadioGroup
+                  value={access}
+                  onChange={(e) => setAccess(e.target.value)}
                   sx={{
-                    margin: 1,
-                    display: 'block'
-                  }}
-                  variant="outlined"
-                />
-                <TextField
-                  onChange={handleAddressChange}
-                  value={address}
-                  fullWidth
-                  id="outlined-basic" 
-                  label="park address"
-                  required
-                  sx={{
-                    margin: 1,
-                    display: 'block'
-                  }}
-                  variant="outlined"
-                />
-                <Box>
-                  <FormControl sx={{ m: 1, display: 'flex', flexDirection: 'row' }} component="fieldset" variant="standard">
-                    <FormLabel sx={{ m: 1 }}>type</FormLabel>
-                    <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={dirt} onChange={handleTypeChange} name="dirt" />
-                        }
-                        label="dirt"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={race} onChange={handleTypeChange} name="race" />
-                        }
-                        label="race"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={street} onChange={handleTypeChange} name="street" />
-                        }
-                        label="street"
-                      />
-                    </FormGroup>
-                  </FormControl>
-                </Box>
-                <Box>
-                  <RadioGroup
-                    value={access}
-                    onChange={(e) => setAccess(e.target.value)}
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'row'
-                    }}
-                  >
-                    <FormControlLabel value="free" control={<Radio />} label="free" />
-                    <FormControlLabel value="paid" control={<Radio />} label="paid" />
-                  </RadioGroup>
-                </Box>
-                <Button
-                  type="submit"
-                  color="primary"
-                  disabled={!canSave}
-                  sx={{
-                    margin: 1
+                    display: 'flex',
+                    flexDirection: 'row'
                   }}
                 >
-                  add park
-                </Button>
-              </form>
-            </Box>
-        </Modal>
+                  <FormControlLabel value="free" control={<Radio />} label="free" />
+                  <FormControlLabel value="paid" control={<Radio />} label="paid" />
+                </RadioGroup>
+              </Box>
+              <Button
+                type="submit"
+                color="primary"
+                disabled={!canSave}
+                sx={{
+                  margin: 1
+                }}
+              >
+                add park
+              </Button>
+            </form>
+          </Box>
+      </Modal>
     </>
   )
 }
