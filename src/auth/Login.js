@@ -23,7 +23,7 @@ const Login = () => {
             const data = await dispatch(loginUser({ email, password })).unwrap()            
             setEmail('')
             setPassword('')
-            navigate('/')
+            navigate('/parks')
         } catch (err) {
             console.error('Failed to save the post', err)
         } finally {

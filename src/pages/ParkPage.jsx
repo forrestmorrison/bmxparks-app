@@ -1,25 +1,9 @@
 import { useEffect, useState } from "react"
-import Modal from "react-modal"
 import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { Button } from "@mui/material"
-import { showPark } from "../features/parks/parkSlice"
-
-
-const customStyles = {
-    content: {
-      width: "600px",
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      position: "relative",
-    },
-  }
-  
-  Modal.setAppElement("#root")
+import { deletePark, showPark } from "../features/parks/parkSlice"
+import AddReview from "../components/AddReview"
 
 const ParkPage = ({item}) => {
     const dispatch = useDispatch()
@@ -41,14 +25,14 @@ const ParkPage = ({item}) => {
         })
     }, [parkId])
 
-    // const onDeletePark = () => {
-    //     try {           
-    //         dispatch(deletePark(item.id)).unwrap()
-    //         navigate("/")
-    //     } catch (err) {
-    //         console.error('Failed to delete the post', err)
-    //     } 
-    //   }
+    const onDeletePark = () => {
+        try {           
+            dispatch(deletePark(park.id)).unwrap()
+            navigate("/")
+        } catch (err) {
+            console.error('Failed to delete the post', err)
+        } 
+      }
 
     return (
         <div className="park-page">
@@ -65,21 +49,9 @@ const ParkPage = ({item}) => {
                             <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
                         </div>
                         <div>
+                           <AddReview />
                             <Button 
-                                onClick={openModal}
-                                sx={{
-                                    backgroundColor: "purple",
-                                    color: "white",
-                                    m: 1,
-                                    "&:hover": {
-                                        backgroundColor: "white",
-                                        color: "purple",
-                                    }
-                                }}
-                            >
-                                Add Review
-                            </Button>
-                            <Button 
+                                onClick={onDeletePark}
                                 sx={{
                                     backgroundColor: "red",
                                     color: "white",
@@ -97,14 +69,7 @@ const ParkPage = ({item}) => {
                     </section>
                     <article>
                         <h2>Reviews</h2>
-                        <Modal 
-                            isOpen={modalIsOpen} 
-                            onRequestClose={closeModal} 
-                            style={customStyles}
-                            contentLabel="add review"
-                        >
-                            
-                        </Modal>
+
                     </article>
                     
                 </>

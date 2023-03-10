@@ -123,7 +123,7 @@ const AddPark = () => {
             }}
           >
             <form noValidate autoComplete="off" className='form' onSubmit={onAddPark}>
-              <h1>add park</h1>
+              <h1>New Park</h1>
               <TextField
                 onChange={handleNameChange}
                 value={name}

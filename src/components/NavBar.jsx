@@ -3,15 +3,24 @@ import HamMenu from './HamMenu';
 import { AppBar, Box, Button, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import bmxlogo from '../images/bmxlogo.jpg'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearAuthState } from '../features/users/authSlice';
 
 const logo = bmxlogo
 
 const NavBar = () => {
-
+    const dispatch = useDispatch()
     const user = useSelector(state => state.auth.user);
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('md'))
+
+    const onLogOut = () => {
+        // todo
+        // remove token from localstorage
+        // clear user in redux
+        localStorage.removeItem('token')
+        dispatch(clearAuthState())
+    }
     
     return (
         <Box 
@@ -24,7 +33,7 @@ const NavBar = () => {
                         justifyContent: "space-between"
                     }}
                 >
-                    <Link to="/" 
+                    <Link to={user ? '/parks' : '/'}
                         style={{
                             textDecoration:"none",
                             display: "flex",
@@ -62,12 +71,9 @@ const NavBar = () => {
                         user ? (
                             <Box>
                                 <AddPark />
-                                <Link to="/signup" 
-                                    style={{
-                                        textDecoration: "none"
-                                    }}
-                                >
+                                
                                     <Button 
+                                        onClick={onLogOut}
                                         color="primary"
                                         sx={{
                                             m: 1,
@@ -79,7 +85,7 @@ const NavBar = () => {
                                     >
                                         Log Out
                                     </Button>
-                                </Link>
+                               
                             </Box>
                         ) : (
                             <Box>
