@@ -66,10 +66,12 @@ const AddReview = () => {
       <Button 
         onClick={openModal} 
         sx={{
+          backgroundColor: "purple",
+          color: "white",
           m: 1,
           "&:hover": {
-              backgroundColor: "purple",
-              color: "white",
+              backgroundColor: "white",
+              color: "purple",
           }
         }}
       >

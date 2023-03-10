@@ -2,20 +2,11 @@ import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom"
 import { Grid } from '@mui/material'
-import { deletePark } from '../features/parks/parkSlice'
 
 const ParkItem = ({item}) => {
     console.log('item', item.id)
 
     const dispatch = useDispatch();
-
-    const onDeletePark = () => {
-        try {           
-            dispatch(deletePark(item.id)).unwrap()
-        } catch (err) {
-            console.error('Failed to delete the post', err)
-        } 
-    }
     
     return (
             <Grid item
@@ -31,7 +22,6 @@ const ParkItem = ({item}) => {
                     <div className='park-name-display'>{item.name}</div>
                     <div className='park-address-display'>{item.address}</div>
                 </Link>
-                    {/* <button type="button" onClick={onDeletePark}>Delete</button> */}
             </Grid>
         
     )

@@ -49,7 +49,7 @@ const ParkPage = ({item}) => {
                             <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
                         </div>
                         <div>
-                           <AddReview />
+                            <AddReview />
                             <Button 
                                 onClick={onDeletePark}
                                 sx={{
