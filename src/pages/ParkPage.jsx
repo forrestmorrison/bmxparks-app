@@ -18,12 +18,17 @@ const ParkPage = () => {
     }, [parkId])
 
     return (
-        <div>
-            current park
-            {park && <>
-                <div>Name {park.name}</div>
-                <div>Address {park.address}</div>
-            </>}
+        <div className="park-page">
+            {
+                park && 
+                <>
+                    <header>
+                        <h1>{park.name}</h1>
+                        <h3>{park.address}</h3>
+                    </header>
+                    <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
+                </>
+            }
         </div>
     )
 }

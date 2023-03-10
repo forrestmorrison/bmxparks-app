@@ -13,10 +13,9 @@ code {
 }
 
 main {
+  padding: 20px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
 
 h1 {
@@ -53,4 +52,31 @@ h1 {
 
 .park-link {
   text-decoration: none;
+}
+
+.park-page {
+  position: relative;
+  text-align: left;
+}
+
+.park-page h1 {
+  margin-bottom: 5px;
+}
+
+.park-page header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.page-data {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-data-label {
+  margin-right: 20px;
+  color: purple;
+  font-weight: bold;
 }
