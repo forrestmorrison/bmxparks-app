@@ -1,20 +1,28 @@
-import { Link } from 'react-router-dom';
-import { Button } from "@mui/material";
 import { useAuthStatus } from '../hooks/useAuthStatus';
+import ImageSlider from '../components/ImageSlider';
+
+const slides = [
+  {url: "http://localhost:3000/images/home1.png", title: "home1"},
+  {url: "http://localhost:3000/images/home2.png", title: "home2"},
+  {url: "http://localhost:3000/images/home3.png", title: "home3"},
+  {url: "http://localhost:3000/images/home4.png", title: "home4"},
+]
+
+const containerStyles = {
+  width: "500px",
+  height: "250px",
+  margin: "0 auto"
+}
 
 const Home = () => {
   useAuthStatus();
 
   return (
     <>
-            <h1>Welcome to the BMX Parks app!</h1>
-            <Link to="/about" 
-                style={{
-                    textDecoration:"none"
-                }}
-            >
-                <Button color="primary">about this app</Button>
-            </Link>
+      <h1>Welcome to the BMX Parks app!</h1>
+      <div style={containerStyles}>
+        <ImageSlider slides={slides} /> 
+      </div>
     </>
   )
 }

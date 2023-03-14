@@ -47,7 +47,7 @@ const Login = () => {
                 }}
             >
                 <h1>Log In</h1>
-                <form noValidate autoComplete='off' className='form'>
+                <form noValidate autoComplete='off' className='form' onSubmit={onLogin}>
                     <TextField
                         onChange={handleEmailChange}
                         value={email}
@@ -75,13 +75,12 @@ const Login = () => {
                         variant="outlined"
                     />
                     <Button 
-                        type="button"
+                        type="submit"
                         color="primary"
                         sx={{
                             margin: 1
                         }} 
                         disabled={!canSave} 
-                        onClick={onLogin}
                     >
                         Log In
                     </Button>
