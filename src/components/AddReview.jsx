@@ -10,7 +10,7 @@ import { addNewReview } from '../features/reviews/reviewSlice';
 
 const customStyles = {
   content: {
-    width: "600px",
+    width: "500px",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -128,7 +128,17 @@ const AddReview = () => {
                 color="primary"
                 disabled={!canSave}
                 sx={{
-                  margin: 1
+                  margin: 1,
+                  backgroundColor: "purple",
+                  color: "white",
+                  "&:hover": {
+                      backgroundColor: "white",
+                      color: "purple",
+                  },
+                  "&.Mui-disabled": {
+                      background: "white",
+                      color: "grey"
+                  }
                 }}
               >
                 Add Review
