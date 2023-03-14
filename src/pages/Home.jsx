@@ -18,15 +18,15 @@ const Home = () => {
   useAuthStatus();
 
   return (
-    <>
+    <div className="home-container">
       <h1>Welcome to the BMX Parks app!</h1>
       <div style={containerStyles}>
         <ImageSlider slides={slides} /> 
       </div>
       <div className="home-description">
-        <p>The BMX Parks app is a database BMX Parks where you can add your favorite BMX park, as well as rate & review any park in the app.</p>
+        <p>The BMX Parks app is a database of BMX Parks where you can add your favorite BMX park, as well as rate & review any park in the app.</p>
       </div>
-    </>
+    </div>
   )
 }
 

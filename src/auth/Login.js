@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <div className="home-container">
             <Box
                 sx={{
                     width: {
@@ -67,6 +67,7 @@ const Login = () => {
                         fullWidth
                         id="outlined-basic" 
                         label="password"
+                        type="password"
                         required
                         sx={{
                             margin: 1,
@@ -96,7 +97,7 @@ const Login = () => {
                     </Button>
                 </form>
             </Box>
-        </>
+        </div>
     )
 }
 
