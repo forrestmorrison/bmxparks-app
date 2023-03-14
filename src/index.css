@@ -86,6 +86,8 @@ h2 {
 }
 
 .park-page header {
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -93,6 +95,8 @@ h2 {
 }
 
 .park-page section {
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -112,6 +116,7 @@ h2 {
 }
 
 .park-info {
+  margin-left: 10px;
   display: flex;
   flex-direction: row;
 }
