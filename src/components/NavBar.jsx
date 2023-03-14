@@ -2,7 +2,7 @@ import AddPark from './AddPark';
 import HamMenu from './HamMenu';
 import { AppBar, Box, Button, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import bmxlogo from '../images/bmxlogo.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearAuthState } from '../features/users/authSlice';
 
@@ -10,6 +10,7 @@ const logo = bmxlogo
 
 const NavBar = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const user = useSelector(state => state.auth.user);
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('md'))
@@ -20,6 +21,7 @@ const NavBar = () => {
         // clear user in redux
         localStorage.removeItem('token')
         dispatch(clearAuthState())
+        navigate('/')
     }
     
     return (

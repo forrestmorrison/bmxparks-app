@@ -98,8 +98,18 @@ const Signup = () => {
             color="primary"
             disabled={!canSave}
             sx={{
-              margin: 1
-            }}
+              margin: 1,
+              backgroundColor: "purple",
+              color: "white",
+              "&:hover": {
+                  backgroundColor: "white",
+                  color: "purple",
+              },
+              "&.Mui-disabled": {
+                  background: "white",
+                  color: "grey"
+              }
+            }} 
           >
             Create Account
           </Button>
