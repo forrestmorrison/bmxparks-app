@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom"
 import Login from './auth/Login';
 import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
-import About from "./pages/About";
 import Home from "./pages/Home";
 import ParkPage from "./pages/ParkPage";
 import { createTheme } from '@mui/material/styles'
@@ -39,7 +38,6 @@ function App() {
             <main>
               <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/parks" element={<><ParkList /></>} />

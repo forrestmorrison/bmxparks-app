@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../features/users/authSlice'
-import { Button, TextField } from '@mui/material';
+import { Box, Button, TextField } from '@mui/material';
 
 const Login = () => {
     const dispatch  = useDispatch();
@@ -32,48 +32,62 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h1>Log In</h1>
-            <form>
-                <TextField
-                    onChange={handleEmailChange}
-                    value={email}
-                    fullWidth
-                    id="outlined-basic" 
-                    label="email"
-                    required
-                    sx={{
-                        margin: 1,
-                        display: 'block'
-                    }}
-                    variant="outlined"
-                />
-                <TextField
-                    onChange={handlePasswordChange}
-                    value={password}
-                    fullWidth
-                    id="outlined-basic" 
-                    label="password"
-                    required
-                    sx={{
-                        margin: 1,
-                        display: 'block'
-                    }}
-                    variant="outlined"
-                />
-                <Button 
-                    type="button"
-                    color="primary"
-                    sx={{
-                        margin: 1
-                    }} 
-                    disabled={!canSave} 
-                    onClick={onLogin}
-                >
-                    Log In
-                </Button>
-            </form>
-        </div>
+        <>
+            <Box
+                sx={{
+                    width: {
+                        xs: 350,
+                        sm: 500,
+                    },
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexGrow: 1 
+                }}
+            >
+                <h1>Log In</h1>
+                <form noValidate autoComplete='off' className='form'>
+                    <TextField
+                        onChange={handleEmailChange}
+                        value={email}
+                        fullWidth
+                        id="outlined-basic" 
+                        label="email"
+                        required
+                        sx={{
+                            margin: 1,
+                            display: 'block'
+                        }}
+                        variant="outlined"
+                    />
+                    <TextField
+                        onChange={handlePasswordChange}
+                        value={password}
+                        fullWidth
+                        id="outlined-basic" 
+                        label="password"
+                        required
+                        sx={{
+                            margin: 1,
+                            display: 'block'
+                        }}
+                        variant="outlined"
+                    />
+                    <Button 
+                        type="button"
+                        color="primary"
+                        sx={{
+                            margin: 1
+                        }} 
+                        disabled={!canSave} 
+                        onClick={onLogin}
+                    >
+                        Log In
+                    </Button>
+                </form>
+            </Box>
+        </>
     )
 }
 

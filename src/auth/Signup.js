@@ -52,7 +52,7 @@ const Signup = () => {
           flexGrow: 1 
         }}
       >
-        <form noValidate autoComplete="off" className='form' onSubmit={onSignUp}>
+        <form noValidate autoComplete="off" className="form" onSubmit={onSignUp}>
           <h1>Sign Up</h1>
           <TextField
             onChange={handleEmailChange}
@@ -63,7 +63,7 @@ const Signup = () => {
             required
             sx={{
               margin: 1,
-              display: 'block'
+              display: "block"
             }}
             variant="outlined"
           />
