@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Grid } from '@mui/material'
 
 const ReviewItem = ({item}) => {
-    console.log('item', item.id)
 
     const dispatch = useDispatch();
     

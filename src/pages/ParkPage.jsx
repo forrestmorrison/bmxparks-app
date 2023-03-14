@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import { Button } from "@mui/material"
 import { deletePark, showPark } from "../features/parks/parkSlice"
 import AddReview from "../components/AddReview"
+import ReviewList from "../components/ReviewList"
+
 
 const ParkPage = ({item}) => {
     const dispatch = useDispatch()
@@ -64,7 +66,7 @@ const ParkPage = ({item}) => {
                     </section>
                     <article>
                         <h2>Reviews</h2>
-
+                        <ReviewList />
                     </article>
                     
                 </>
