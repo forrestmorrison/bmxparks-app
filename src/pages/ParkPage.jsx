@@ -13,11 +13,6 @@ const ParkPage = ({item}) => {
 
     const [park, setPark] = useState()
 
-    const [modalIsOpen, setModalIsOpen] = useState(false)
-
-    const openModal = () => setModalIsOpen(true)
-    const closeModal = () => setModalIsOpen(false)
-
     useEffect(() => {
         dispatch(showPark(parkId)).unwrap()
         .then(parkData => {
@@ -28,7 +23,7 @@ const ParkPage = ({item}) => {
     const onDeletePark = () => {
         try {           
             dispatch(deletePark(park.id)).unwrap()
-            navigate("/")
+            navigate("/parks")
         } catch (err) {
             console.error('Failed to delete the post', err)
         } 
