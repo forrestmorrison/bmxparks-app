@@ -23,6 +23,9 @@ const Home = () => {
       <div style={containerStyles}>
         <ImageSlider slides={slides} /> 
       </div>
+      <div className="home-description">
+        <p>The BMX Parks app is a database BMX Parks where you can add your favorite BMX park, as well as rate & review any park in the app.</p>
+      </div>
     </>
   )
 }
