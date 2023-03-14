@@ -7,6 +7,7 @@ import {
   TextField 
 } from '@mui/material';
 import { addNewReview } from '../features/reviews/reviewSlice';
+import ReviewRating from "./ReviewRating"
 
 const customStyles = {
   content: {
@@ -27,7 +28,7 @@ const AddReview = () => {
   const dispatch = useDispatch()
 
   const [comment, setComment] = useState('')
-  const [rating, setRating] = useState('')
+  const [rating, setRating] = useState(0)
 
   const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
@@ -109,19 +110,7 @@ const AddReview = () => {
                 }}
                 variant="outlined"
               />
-              <TextField
-                onChange={handleRatingChange}
-                value={rating}
-                fullWidth
-                id="outlined-basic" 
-                label="rating"
-                required
-                sx={{
-                  margin: 1,
-                  display: 'block'
-                }}
-                variant="outlined"
-              />
+              <ReviewRating />
               
               <Button
                 type="submit"

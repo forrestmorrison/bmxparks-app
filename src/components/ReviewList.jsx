@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getReviews } from "../features/reviews/reviewSlice"
 import { Grid } from "@mui/material"
 import ReviewItem from "./ReviewItem"
+import ReviewRating from "./ReviewRating"
 
 const ReviewList = () => {
     const dispatch = useDispatch()
@@ -14,7 +15,9 @@ const ReviewList = () => {
     }, [])
 
     if(reviews.length === 0) {
-        return <p>Be the first to review this park!</p>
+        return (
+                <p>Be the first to review this park!</p>
+        )
     }
 
     return (

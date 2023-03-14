@@ -1,18 +1,26 @@
-import {} from "react-icons"
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 
-const colors = {
-    orange: "#FFBA5A",
-    grey: "#a9a9a9"
-}
+export default function BasicRating() {
+  const [value, setValue] = React.useState(0);
 
-const ReviewRating = () => {
   return (
-    <div>
-
-    </div>
-  )
+    <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+    >
+      <Rating
+        name="simple-controlled"
+        value={value}
+        sx={{
+            mt: 2
+        }}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
+    </Box>
+  );
 }
-
-
-
-export default ReviewRating
