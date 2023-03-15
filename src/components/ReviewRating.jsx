@@ -2,9 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
-export default function BasicRating() {
-  const [value, setValue] = React.useState(0);
-
+export default function BasicRating({ rating, onChange }) {
   return (
     <Box
       sx={{
@@ -13,12 +11,12 @@ export default function BasicRating() {
     >
       <Rating
         name="simple-controlled"
-        value={value}
+        value={rating}
         sx={{
             mt: 2
         }}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          onChange(newValue);
         }}
       />
     </Box>

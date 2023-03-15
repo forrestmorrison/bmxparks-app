@@ -15,6 +15,8 @@ const ParkPage = ({item}) => {
 
     const [park, setPark] = useState()
 
+    console.log('parl', park)
+
     useEffect(() => {
         dispatch(showPark(parkId)).unwrap()
         .then(parkData => {
@@ -42,11 +44,11 @@ const ParkPage = ({item}) => {
                     </header>
                     <section>
                         <div className="park-info">
-                            <div className="page-data"><div className="page-data-label">type:</div>{park.type}</div>
+                            <div className="page-data"><div className="page-data-label">type:</div>{park.park_type}</div>
                             <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
                         </div>
                         <div>
-                            <AddReview />
+                            <AddReview parkId={parkId} />
                             <Button 
                                 onClick={onDeletePark}
                                 sx={{

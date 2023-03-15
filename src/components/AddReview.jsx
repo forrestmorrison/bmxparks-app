@@ -24,7 +24,7 @@ const customStyles = {
 
 Modal.setAppElement("#root")
 
-const AddReview = () => {
+const AddReview = ({ parkId }) => {
   const dispatch = useDispatch()
 
   const [comment, setComment] = useState('')
@@ -51,10 +51,10 @@ const AddReview = () => {
     e.preventDefault()
     try {
         setAddRequestStatus('pending')
-        dispatch(addNewReview({ comment, rating, user_id: 1 })).unwrap()
-        setComment('')
-        setRating('')
+        dispatch(addNewReview({ comment, rating, user_id: 1, park_id: parkId })).unwrap()
         closeModal()
+        setRating(0)
+        setComment('')
     } catch (err) {
         console.error('Failed to save the post', err)
     } finally {
@@ -110,7 +110,7 @@ const AddReview = () => {
                 }}
                 variant="outlined"
               />
-              <ReviewRating />
+              <ReviewRating onChange={setRating} rating={rating} />
               
               <Button
                 type="submit"

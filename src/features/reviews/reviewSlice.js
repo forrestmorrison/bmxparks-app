@@ -25,7 +25,7 @@ export const reviewSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(addNewReview.fulfilled, (state, action) => {
-                state.reviews.push(action.payload)
+                state.reviews = [action.payload, ...state.reviews]
                 //state.reviews.sort((a, b) => a.name > b.name ? 1 : -1)
             })
             .addCase(getReviews.fulfilled, (state, action) => {

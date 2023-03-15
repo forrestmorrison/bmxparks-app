@@ -40,8 +40,8 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/parks" element={<><ParkList /></>} />
-                <Route path="/parks/:parkId" element={<ParkPage />} />
+                <Route path="/parks" element={<PrivateRoute><ParkList /></PrivateRoute>} />
+                <Route path="/parks/:parkId" element={<PrivateRoute><ParkPage /></PrivateRoute>} />
               </Routes>
             </main>
           </div>
