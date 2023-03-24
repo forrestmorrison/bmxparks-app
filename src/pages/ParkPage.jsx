@@ -7,7 +7,7 @@ import AddReview from "../components/AddReview"
 import ReviewList from "../components/ReviewList"
 
 
-const ParkPage = ({item}) => {
+const ParkPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -15,7 +15,7 @@ const ParkPage = ({item}) => {
 
     const [park, setPark] = useState()
 
-    console.log('parl', park)
+    console.log('park', park)
 
     useEffect(() => {
         dispatch(showPark(parkId)).unwrap()
@@ -68,7 +68,7 @@ const ParkPage = ({item}) => {
                     </section>
                     <article>
                         <h2>Reviews</h2>
-                        <ReviewList />
+                        <ReviewList parkId={parkId} />
                     </article>
                     
                 </>

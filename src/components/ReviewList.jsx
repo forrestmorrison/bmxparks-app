@@ -5,13 +5,13 @@ import { Grid } from "@mui/material"
 import ReviewItem from "./ReviewItem"
 import ReviewRating from "./ReviewRating"
 
-const ReviewList = () => {
+const ReviewList = ({ parkId }) => {
     const dispatch = useDispatch()
 
     const reviews = useSelector(state => state.reviews.reviews)
 
     useEffect(() => {
-        dispatch(getReviews())
+        dispatch(getReviews({ parkId }))
     }, [])
 
     if(reviews.length === 0) {

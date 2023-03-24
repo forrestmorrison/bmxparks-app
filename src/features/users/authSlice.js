@@ -26,14 +26,14 @@ export const loginUser = createAsyncThunk('users/loginUser', async (user) => {
     return response.data
 })
 
-export const axiosWithAuth = axios.create({
+export const axiosWithAuth = () => axios.create({
     headers: {
         'authorization': `Bearer ${getFromLocalStorage('token')}` 
     }  
   });
 
 export const checkUser = createAsyncThunk('users/checkUser', async () => {
-    const response = await axiosWithAuth.get(`${USERS_URL}/checkUser`)
+    const response = await axiosWithAuth().get(`${USERS_URL}/checkUser`)
     return response.data
 })
 
@@ -41,8 +41,8 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        clearAuthState: (state) => {
-            state.user = undefined
+        clearAuthState: () => {
+            return initialState
         }
     },
     extraReducers(builder) {

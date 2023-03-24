@@ -101,7 +101,6 @@ const AddReview = ({ parkId }) => {
                 onChange={handleCommentChange}
                 value={comment}
                 fullWidth
-                id="outlined-basic" 
                 label="comment"
                 required
                 sx={{

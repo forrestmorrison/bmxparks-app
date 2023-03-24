@@ -128,7 +128,6 @@ const AddPark = () => {
                 onChange={handleNameChange}
                 value={name}
                 fullWidth
-                id="outlined-basic" 
                 label="park name"
                 required
                 sx={{
@@ -141,7 +140,6 @@ const AddPark = () => {
                 onChange={handleAddressChange}
                 value={address}
                 fullWidth
-                id="outlined-basic" 
                 label="park address"
                 required
                 sx={{

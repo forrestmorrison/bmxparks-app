@@ -5,8 +5,8 @@ const REVIEWS_URL = "/reviews"
 
 const initialState = { reviews: [] }
 
-export const getReviews = createAsyncThunk('reviews/getReviews', async (reviews) => {
-    const response = await axios.get(`${REVIEWS_URL}`, reviews)
+export const getReviews = createAsyncThunk('reviews/getReviews', async (params) => {
+    const response = await axios.get(`${REVIEWS_URL}`, { params })
     // console.log('response', response)
     return response.data
 })

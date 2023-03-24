@@ -58,7 +58,6 @@ const Signup = () => {
             onChange={handleEmailChange}
             value={email}
             fullWidth
-            id="outlined-basic" 
             label="email"
             required
             sx={{
@@ -71,7 +70,6 @@ const Signup = () => {
             onChange={handleUsernameChange}
             value={username}
             fullWidth
-            id="outlined-basic" 
             label="name"
             required
             sx={{
@@ -84,7 +82,6 @@ const Signup = () => {
             onChange={handlePasswordChange}
             value={password}
             fullWidth
-            id="outlined-basic" 
             label="password"
             type="password"
             required

@@ -20,7 +20,7 @@ const Login = () => {
     const onLogin = async () => {
         try {
             setAddRequestStatus('pending')
-            const data = await dispatch(loginUser({ email, password })).unwrap()            
+            await dispatch(loginUser({ email, password })).unwrap()            
             setEmail('')
             setPassword('')
             navigate('/parks')
@@ -52,7 +52,6 @@ const Login = () => {
                         onChange={handleEmailChange}
                         value={email}
                         fullWidth
-                        id="outlined-basic" 
                         label="email"
                         required
                         sx={{
@@ -64,8 +63,7 @@ const Login = () => {
                     <TextField
                         onChange={handlePasswordChange}
                         value={password}
-                        fullWidth
-                        id="outlined-basic" 
+                        fullWidth                        
                         label="password"
                         type="password"
                         required
