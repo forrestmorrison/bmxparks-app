@@ -31,7 +31,18 @@ const HamMenu = () => {
                                         textDecoration:"none"
                                     }}
                                 >
-                                    <Button color="primary">log out</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            m: 1,
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                          }}
+                                    >
+                                        Log Out
+                                    </Button>
                                 </Link>
                             </ListItemIcon>
                         </ListItemButton>
@@ -45,7 +56,18 @@ const HamMenu = () => {
                                         textDecoration:"none"
                                     }}
                                 >
-                                    <Button color="primary">log in</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            m: 1,
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                          }}
+                                    >
+                                        Log In
+                                    </Button>
                                 </Link>
                             </ListItemIcon>
                         </ListItemButton>
@@ -56,7 +78,18 @@ const HamMenu = () => {
                                         textDecoration:"none"
                                     }}
                                 >
-                                    <Button color="primary">sign up</Button>
+                                    <Button 
+                                        color="primary"
+                                        sx={{
+                                            m: 1,
+                                            "&:hover": {
+                                                backgroundColor: "purple",
+                                                color: "white",
+                                            }
+                                          }}
+                                    >
+                                        Sign Up
+                                    </Button>
                                 </Link>
                             </ListItemIcon>
                         </ListItemButton>

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import Login from './auth/Login';
 import Signup from "./auth/Signup";
 import NavBar from "./components/NavBar";
@@ -10,6 +10,8 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import PrivateRoute from "./components/PrivateRoute";
 import ParkList from "./components/ParkList";
+import About from "./pages/About"
+import { Button } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -30,6 +32,12 @@ const theme = createTheme({
 
 function App() {
 
+  const navigate = useNavigate()
+
+  const onAbout = () => {
+    navigate("/about")
+  }
+
   return (
     <Provider store={store}>
         <ThemeProvider theme={theme}>
@@ -42,8 +50,24 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/parks" element={<PrivateRoute><ParkList /></PrivateRoute>} />
                 <Route path="/parks/:parkId" element={<PrivateRoute><ParkPage /></PrivateRoute>} />
+                <Route path="/about" element={<About />} />
               </Routes>
             </main>
+            <Button 
+              onClick={onAbout()}
+              sx={{
+                backgroundColor: "white",
+                color: "purple",
+                m: 1,
+                "&:hover": {
+                    backgroundColor: "purple",
+                    color: "white",
+                }
+              }}
+            >
+              About This App
+            </Button>
+
           </div>
         </ThemeProvider>
     </Provider>
