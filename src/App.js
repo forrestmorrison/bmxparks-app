@@ -20,7 +20,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Arial",
+      "Courier New",
     ],
     button: {
       textTransform: 'none',
