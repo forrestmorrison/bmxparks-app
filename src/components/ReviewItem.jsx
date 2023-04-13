@@ -12,28 +12,26 @@ const ReviewItem = ({item}) => {
                 
                 xs={8} md={10}
                 sx={{
-                    margin: 1,
+                    margin: 2,
                     padding: 1
                 }}
             >
-                <div className='comment-display'>{item.comment}</div>
-                <div className='rating-display'>{item.rating}</div>
-                <Box
-                    sx={{
-                        '& > legend': { mt: 2 },
-                    }}
-                >
-                    <Rating
-                        name="simple-controlled"
-                        value={rating}
+                <div className='rating-display'>
+                    <Box
                         sx={{
-                            mt: 2
+                            '& > legend': { mt: 2 },
                         }}
-                        onChange={(event, newValue) => {
-                        onChange(newValue);
-                        }}
-                    />
-                </Box>
+                    >
+                        <Rating
+                            name="simple-controlled"
+                            value={item.rating}
+                            sx={{
+                                m: 1
+                            }}
+                        />
+                    </Box>
+                </div>
+                <div className='comment-display'>{item.comment}</div>
             </Grid>
         
     )

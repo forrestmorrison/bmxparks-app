@@ -125,3 +125,7 @@ h2 {
   color: purple;
   font-weight: bold;
 }
+
+.comment-display {
+  margin: 1rem;
+}

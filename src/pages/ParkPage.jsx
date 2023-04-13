@@ -69,7 +69,6 @@ const ParkPage = () => {
                     <article>
                         <h2>Reviews</h2>
                         <ReviewList parkId={parkId} />
-                        <Weather />
                     </article>
                     
                 </>
