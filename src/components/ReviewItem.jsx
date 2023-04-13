@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux';
-import { Grid } from '@mui/material'
+import { Box, Grid, Rating } from '@mui/material'
 
 const ReviewItem = ({item}) => {
 
@@ -16,8 +16,24 @@ const ReviewItem = ({item}) => {
                     padding: 1
                 }}
             >
-                    <div className='comment-display'>{item.comment}</div>
-                    <div className='rating-display'>{item.rating}</div>
+                <div className='comment-display'>{item.comment}</div>
+                <div className='rating-display'>{item.rating}</div>
+                <Box
+                    sx={{
+                        '& > legend': { mt: 2 },
+                    }}
+                >
+                    <Rating
+                        name="simple-controlled"
+                        value={rating}
+                        sx={{
+                            mt: 2
+                        }}
+                        onChange={(event, newValue) => {
+                        onChange(newValue);
+                        }}
+                    />
+                </Box>
             </Grid>
         
     )
