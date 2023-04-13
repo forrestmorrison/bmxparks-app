@@ -32,8 +32,7 @@ const ReviewItem = ({item}) => {
                     </Box>
                 </div>
                 <div className='comment-display'>{item.comment}</div>
-            </Grid>
-        
+            </Grid>        
     )
 }
 

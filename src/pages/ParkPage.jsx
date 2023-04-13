@@ -41,13 +41,6 @@ const ParkPage = () => {
                 <>
                     <header>
                         <h1>{park.name}</h1>
-                        <h3>{park.address}</h3>
-                    </header>
-                    <section>
-                        <div className="park-info">
-                            <div className="page-data"><div className="page-data-label">type:</div>{park.park_type}</div>
-                            <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
-                        </div>
                         <div>
                             <AddReview parkId={parkId} />
                             <Button 
@@ -64,6 +57,13 @@ const ParkPage = () => {
                             >
                                 Delete Park
                             </Button>
+                        </div>
+                    </header>
+                    <section>
+                        <div className="park-info">
+                            <div className="page-data"><h3>{park.address}</h3></div>
+                            <div className="page-data"><div className="page-data-label">type:</div>{park.park_type}</div>
+                            <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
                         </div>                       
                     </section>
                     <article>

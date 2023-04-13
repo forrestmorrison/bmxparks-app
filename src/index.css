@@ -109,15 +109,14 @@ h2 {
 }
 
 .page-data {
-  margin-right: 40px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
 }
 
 .park-info {
-  margin-left: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .page-data-label {
