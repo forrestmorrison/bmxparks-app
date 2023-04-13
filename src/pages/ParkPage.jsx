@@ -5,6 +5,7 @@ import { Button } from "@mui/material"
 import { deletePark, showPark } from "../features/parks/parkSlice"
 import AddReview from "../components/AddReview"
 import ReviewList from "../components/ReviewList"
+import Weather from "../components/Weather"
 
 
 const ParkPage = () => {
@@ -63,12 +64,12 @@ const ParkPage = () => {
                             >
                                 Delete Park
                             </Button>
-                        </div>
-                        
+                        </div>                       
                     </section>
                     <article>
                         <h2>Reviews</h2>
                         <ReviewList parkId={parkId} />
+                        <Weather />
                     </article>
                     
                 </>
