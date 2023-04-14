@@ -23,8 +23,9 @@ const ReviewItem = ({item}) => {
                         }}
                     >
                         <Rating
-                            name="simple-controlled"
+                            name="read-only"
                             value={item.rating}
+                            readOnly
                             sx={{
                                 m: 1
                             }}
