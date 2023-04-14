@@ -10,7 +10,7 @@ const ReviewItem = ({item}) => {
             <Grid item
                 className='grid-item'
                 
-                xs={8} md={10}
+                xs={6} md={12}
                 sx={{
                     margin: 2,
                     padding: 1
@@ -27,7 +27,7 @@ const ReviewItem = ({item}) => {
                             value={item.rating}
                             readOnly
                             sx={{
-                                m: 1
+                                m: 0.5
                             }}
                         />
                     </Box>

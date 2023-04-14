@@ -59,18 +59,22 @@ const ParkPage = () => {
                             </Button>
                         </div>
                     </header>
-                    <section>
-                        <div className="park-info">
-                            <div className="page-data"><h3>{park.address}</h3></div>
-                            <div className="page-data"><div className="page-data-label">type:</div>{park.park_type}</div>
-                            <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
-                        </div>                       
-                    </section>
                     <article>
-                        <h2>Reviews</h2>
-                        <ReviewList parkId={parkId} />
+                        <section>
+                            <h2>Park Info</h2>
+                            <div className="info-section">
+                                <div className="page-data"><h4>{park.address}</h4></div>
+                                <div className="page-data"><div className="page-data-label">type:</div>{park.park_type}</div>
+                                <div className="page-data"><div className="page-data-label">access:</div>{park.access}</div>
+                            </div>                       
+                        </section>
+                        <section>
+                            <h2>Reviews</h2>
+                            <div className="review-section">
+                                <ReviewList parkId={parkId} />
+                            </div>
+                        </section>
                     </article>
-                    
                 </>
             }
         </div>
