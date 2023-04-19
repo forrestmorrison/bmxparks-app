@@ -39,25 +39,25 @@ const NavBar = () => {
                         style={{
                             textDecoration:"none",
                             display: "flex",
-                            alignItems: "center"
+                            alignItems: "baseline"
                         }}
                     >
                         <Box 
                             component="img"
                             sx={{
-                                height: 20,
-                                width: 20,
-                                marginRight: 1
+                                height: 30,
+                                width: 30,
+                                marginRight: 2
                             }}
                             alt="bmxlogo"
                             src={logo}
                         />
                         <Typography 
-                            variant="h5" 
+                            variant="h3" 
                             component="div" 
                             sx={{ 
                                 flexGrow: 1,
-                                fontWeight: "bold" 
+                                fontWeight: "bold"
                             }} 
                             color='primary'
                         >
