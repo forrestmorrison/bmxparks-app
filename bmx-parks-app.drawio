@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" modified="2023-04-19T20:47:52.330Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39" etag="ZwDHgQzGdBoV-EjosVKx" version="21.0.4" type="github">
+  <diagram name="Page-1" id="PjYdMfMAm6-RAoaZJvZN">
+    <mxGraphModel dx="1644" dy="430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="40" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-3" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;BMX Parks&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="50" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-4" value="logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="55" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="55" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-7" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="55" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-8" value="landing page (not logged in)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="10" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-10" value="log in" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="55" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-12" value="sign up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="60" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="100" width="760" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="380" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="520" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-16" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="530" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-17" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;BMX Parks&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="530" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-18" value="logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="535" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-19" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="535" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-20" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="535" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-21" value="landing page (logged in)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="490" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-22" value="add park" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="535" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-23" value="log out" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="540" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="580" width="760" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="860" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="1000" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-30" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="1010" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-31" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;BMX Parks&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="1010" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-32" value="logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="1015" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-33" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="1015" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-34" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="1015" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-35" value="park info page (logged in)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="970" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-36" value="add park" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="1015" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-37" value="log out" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="1020" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-38" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="1060" width="760" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="s2J0EijImsOUZ_7DQ-Y0-39" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="1340" width="760" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
