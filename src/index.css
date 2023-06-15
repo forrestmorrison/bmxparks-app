@@ -1,3 +1,11 @@
+:root {
+  --primary-color: purple;
+  --dark-color: black;
+  --light-color: white;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
 body {
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Courier New';

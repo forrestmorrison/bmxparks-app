@@ -194,14 +194,14 @@ const AddPark = () => {
                   margin: 1,
                   backgroundColor: "purple",
                   color: "white",
-                  "&:hover": {
-                      backgroundColor: "white",
-                      color: "purple",
-                  },
-                  "&.Mui-disabled": {
-                      background: "white",
-                      color: "grey"
-                  }
+                    "&:hover": {
+                        backgroundColor: "white",
+                        color: "purple",
+                    },
+                    "&.Mui-disabled": {
+                        background: "white",
+                        color: "grey"
+                    }
                 }}
               >
                 Add Park
