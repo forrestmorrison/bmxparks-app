@@ -41,7 +41,10 @@ const AddPark = () => {
 
   const [name, setName] = useState('')
   const [address, setAddress] = useState('')
-  const [type, setType] = useState(TYPES)
+  const [city, setCity] = useState('')
+  const [st, setSt] = useState('')
+  const [zip, setZip] = useState('')
+  const [type, setType] = useState(TYPES)  
   const [access, setAccess] = useState('')
 
   const [addRequestStatus, setAddRequestStatus] = useState("idle")
@@ -59,6 +62,18 @@ const AddPark = () => {
     setAddress(e.target.value)
   }
 
+  const handleCityChange = (e) => {
+    setCity(e.target.value)
+  }
+
+  const handleStChange = (e) => {
+    setSt(e.target.value)
+  }
+
+  const handleZipChange = (e) => {
+    setZip(e.target.value)
+  }
+
   const handleTypeChange = (e) => {
     setType({
       ...type,
@@ -68,7 +83,7 @@ const AddPark = () => {
 
   const { dirt, race, street } = type;
 
-  const canSave = [name, address, type, access].every(Boolean) && addRequestStatus === "idle"
+  const canSave = [name, address, city, st, zip, type, access].every(Boolean) && addRequestStatus === "idle"
 
   const onAddPark = (e) => {
     e.preventDefault()
@@ -141,6 +156,42 @@ const AddPark = () => {
                 value={address}
                 fullWidth
                 label="park address"
+                required
+                sx={{
+                  margin: 1,
+                  display: 'block'
+                }}
+                variant="outlined"
+              />
+              <TextField
+                onChange={handleCityChange}
+                value={city}
+                fullWidth
+                label="city"
+                required
+                sx={{
+                  margin: 1,
+                  display: 'block'
+                }}
+                variant="outlined"
+              />
+              <TextField
+                onChange={handleStChange}
+                value={st}
+                fullWidth
+                label="state"
+                required
+                sx={{
+                  margin: 1,
+                  display: 'block'
+                }}
+                variant="outlined"
+              />
+              <TextField
+                onChange={handleZipChange}
+                value={zip}
+                fullWidth
+                label="zip"
                 required
                 sx={{
                   margin: 1,
