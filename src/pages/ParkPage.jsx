@@ -5,7 +5,7 @@ import { Button } from "@mui/material"
 import { deletePark, showPark } from "../features/parks/parkSlice"
 import AddReview from "../components/AddReview"
 import ReviewList from "../components/ReviewList"
-import Weather from "../components/Weather"
+import CurWeather from "../components/CurWeather"
 
 
 const ParkPage = () => {
