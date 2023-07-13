@@ -18,7 +18,9 @@ const Weather = () => {
 
   return (
     <div className="weather-component">
-      <h4>current weather: </h4>
+      <h4>current temperature: {data.main.temp.toFixed()}°F</h4>
+      <h4>description: {data.weather[0].main}</h4>
+      <h4>feels like: {data.main.feels_like.toFixed()}</h4>
     </div>
   )
 }
