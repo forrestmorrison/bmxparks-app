@@ -1,16 +1,21 @@
-import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Weather = () => {
-  const [data, setData] = useState({})
+  const [backendData, setBackendData] = useState("")
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=austin&appid={apiKey}`
+  useEffect(() => {
+    fetch("/weather").then(
+      response => response.json()
+    ).then(
+      data => {
+        setBackendData(data)
+      }
+    )
+  })
 
   return (
     <div className="weather-component">
-      <h4>current temperature: {data.main.temp.toFixed()}°F</h4>
-      <h4>description: {data.weather[0].main}</h4>
-      <h4>feels like: {data.main.feels_like.toFixed()}</h4>
+      <h1>Weather!</h1>
     </div>
   )
 }

@@ -116,7 +116,7 @@ h2 {
 
 .park-page article {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: row;
   justify-content: space-between;
 }
